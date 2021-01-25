@@ -9,6 +9,8 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
+const fetch = require('node-fetch')
+
 
 const prefix = config.prefix;
 
@@ -51,7 +53,7 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: `*help | ShadowClan`,
+      name: `TKR Is the Best Clan Ever`,
       type: "WATCHING",
       url: "https://www.twitch.tv/minecraftman097"
     }
@@ -79,5 +81,9 @@ bot.on("message", message => {
     message.channel.send(sEmbed)
   }
 });
+
+setInterval(async () => {
+  await fetch('').then(console.log('Pinged!'))
+}, 240000)
 
 bot.login(TOKEN);

@@ -4,13 +4,11 @@ exports.run = (bot, message, args) => {
 
 
     const Help = new Discord.RichEmbed()
-      .setTitle("**Send**")
-      .addField("<@&801879827459211377>", "")
-      .addField("", "")
-      .addField("``*ban``", "Ban ein User :joy:")
-      .addField("``*kill``", "Kill ein User :joy:")
+      .setTitle("**Send a Schreenshot from:**")
+      .addField("Discord Server", "***Make a Schreenshot from your Discord servers!***")
+      .addField("Agar.io Stats", "***Go on your Agar.io Profile and make from this a Schreenshot!***")
       .setColor("RANDOM")
-      .setFooter(`Requested by: ${message.author.tag}`,);
+      .setFooter(`Make it or Kick ^^`,);
     message.channel.send(Help);
     message.delete()
 }
