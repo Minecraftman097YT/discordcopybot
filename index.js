@@ -82,8 +82,8 @@ bot.on("message", message => {
   }
 });
 
-await fetch('https://tkrbotiscord.glitch.me').then(console.log('Pinged!'))
-}, 240000)setInterval(async () => {
-  
+setInterval(async () => {
+  await fetch('https://tkrbotiscord.glitch.me').then(console.log('Pinged!'))
+}, 240000)
 
 bot.login(TOKEN);
