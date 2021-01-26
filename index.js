@@ -54,11 +54,11 @@ bot.on("ready", () => {
   bot.user.setPresence({
     game: {
       name: `TKR Is the Best Clan Ever`,
-      type: "WATCHING",
+      type: "STREAMING",
       url: "https://www.twitch.tv/minecraftman097"
     }
   });
-  bot.user.setStatus("online");
+  bot.user.setStatus("dnd");
 });
 
 
@@ -77,13 +77,12 @@ bot.on("guildMemberAdd", member => {
   
   **When you will be a** <@&803229525558951987>**, Write** ``I Will be a Guest```);
 });
-
 bot.on("message", message => {
-   if (message.content.toLowerCase() === 'TMSf8ball') {
+  if (message.content.toLowerCase() === 'TMSf8ball') {
     let sEmbed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setTitle("8ball")
-  .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
+      .setColor("RANDOM")
+      .setTitle("8ball")
+      .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
     message.channel.send(sEmbed)
   }
 });
