@@ -68,8 +68,14 @@ bot.on("guildMemberRemove", member => {
 });
 
 bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "👋✔willkommen-und-bye👋✔");
-  msgchannel.send(`Willkommen ${member} auf ShadowClan! :tada: (bot hosting by Minecraftman097#9490)`);
+  let msgchannel = member.guild.channels.find(`name`, "😍willkommen-bye😪");
+  msgchannel.send(`>>> ${member}
+
+  ***Welcome to ⏤͟͟͞★ᴛᴋ͢ʀ㉶Family🌟!***
+
+  **Plese Send your Discord Server and Agar.io Stats when you will Join the Clan!**
+  
+  **When you will be a** <@&803229525558951987>**, Write** ``I Will be a Guest```);
 });
 
 bot.on("message", message => {
