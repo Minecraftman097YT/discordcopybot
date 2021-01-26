@@ -68,7 +68,7 @@ bot.on("guildMemberRemove", member => {
 });
 
 bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "😍willkommen-bye😪");
+  let msgchannel = member.guild.channels.find(`name`, "test-members");
   msgchannel.send(`>>> ${member}
 
   ***Welcome to ⏤͟͟͞★ᴛᴋ͢ʀ㉶Family🌟!***
