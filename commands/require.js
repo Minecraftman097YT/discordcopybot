@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
     const Help = new Discord.RichEmbed()
       .setTitle("**Requirments**")
       .addField("Level:", "***50+***")
-      .addField("Average:", "***800+***")
+      .addField("Average:", "***950+***")
       .addField("Survival Time:", "***40 Minutes or More***")
       .addField("Highscore:", "***40K+***")
       .setColor("RANDOM")
