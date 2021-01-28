@@ -26,8 +26,7 @@ exports.run = async (bot, message, args) => {
       .setColor("RANDOM")
 
       .setTitle(allowed[randomnumber].data.title)
-      .addField("(bot hosting by Minecraftman097#9490)", "bot hosting by Minecraftman097#9490)")
-
+    
       .setDescription("Geposted bei: " + allowed[randomnumber].data.author)
 
       .setImage(allowed[randomnumber].data.url)
