@@ -1,13 +1,15 @@
 dependencies:
-  date-and-time: 0.11.1
+  date-and-time: 0.14.2
   discord.js: 11.6.4
   express: 4.17.1
+  fs: 0.0.1-security
   moment: 2.29.1
   moment-duration-format: 2.3.2
   node-fetch: 2.6.1
   node-opus: 0.3.3
   querystring: 0.2.0
   rainbow-role: 0.1.6
+  snekfetch: 4.0.4
   util: 0.12.3
   ytdl-core: 1.0.9
 packages:
@@ -109,10 +111,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
-  /date-and-time/0.11.1:
+  /date-and-time/0.14.2:
     dev: false
     resolution:
-      integrity: sha512-+1JkWME+UWRpCfvE1T0Vfbw629Ego0IcfHH0qtP4KhAXs7IJT2qsg1hNePqZhyD8Wby46HlW393lSL5PZSzDsA==
+      integrity: sha512-EFTCh9zRSEpGPmJaexg7HTuzZHh6cnJj1ui7IGCFNXzd2QdpsNh05Db5TF3xzJm30YN+A8/6xHSuRcQqoc3kFA==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -281,6 +283,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+  /fs/0.0.1-security:
+    dev: false
+    resolution:
+      integrity: sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
   /function-bind/1.1.1:
     dev: false
     resolution:
@@ -699,6 +705,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /statuses/1.5.0:
     dev: false
     engines:
@@ -802,14 +813,16 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  date-and-time: ^0.11.1
+  date-and-time: ^0.14.2
   discord.js: ^11.5.1
   express: ^4.17.1
+  fs: 0.0.1-security
   moment: ^2.24.0
   moment-duration-format: ^2.3.2
   node-fetch: 2.6.1
   node-opus: ^0.3.2
   querystring: ^0.2.0
   rainbow-role: ^0.1.6
+  snekfetch: ^4.0.4
   util: ^0.12.1
   ytdl-core: ^1.0.3
