@@ -26,8 +26,8 @@ exports.run = async (bot, message, args) => {
       .setColor("RANDOM")
 
       .setTitle(allowed[randomnumber].data.title)
-    
-      .setDescription("Geposted bei: " + allowed[randomnumber].data.author)
+
+      .setDescription("Post From: " + allowed[randomnumber].data.author)
 
       .setImage(allowed[randomnumber].data.url)
 

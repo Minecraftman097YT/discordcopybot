@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
       .setTitle("**Bot Commands:**", "------------------------")
       .addField("***dns**","***See What Our DNS Is or our Region.***")
       .addField("***require**", "***See what a Member Need to have.***")
-      .addField("***send**", "***This command is only for*** <#801833138497519697> ***Because You can use it in All Channels!***")
+      .addField("***send**", "***This command is only for*** <#804132013208109097> ***Because You can use it in All Channels!***")
       .addField("***rules**", "See the Clan Rules! Follow it to become no Warn!")
       .setColor("RANDOM")
       .setFooter(`Thanks me Later c:`);
