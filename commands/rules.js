@@ -3,9 +3,9 @@ const Discord = require("discord.js");
 exports.run = (bot, message, args) => {
 
     const Help = new Discord.RichEmbed()
-      .setTitle("**⏤͟͟͞★ᴛᴋ͢ʀ㉶ Clan Rules**", "------------------------")
-      .addField("1.", "Do No Multiclanning!")
-      .addField("2.", "Don't be Toxic!")
+      .setTitle("**ER:LC Roleplay Regeln!**", "------------------------")
+      .addField("§1", "Feuerwehr/Medic ist unantastbar (bsw.:nicht als geisel möglich usw.)")
+      .addField("2.", "§2 Es gelten die STVO wie ingame. (in einer 50 Zone auch 50 fahren ausgenommen Kriminelle)")
       .addField("3.", "Feed Clan Member Ingame!")
       .addField("4.", "Do not Teamkilling!")
       .addField("5.", "Always use our Tag (⏤͟͟͞★ᴛᴋ͢ʀ㉶) Ingame!")

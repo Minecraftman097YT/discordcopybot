@@ -53,12 +53,12 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: `TKR Is the Best Clan Ever`,
+      name: `Maintance`,
       type: "WATCHING",
       url: "https://www.twitch.tv/minecraftman097"
     }
   });
-  bot.user.setStatus("idle");
+  bot.user.setStatus("dnd");
 });
 
 
