@@ -53,7 +53,7 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: `Maintance`,
+      name: `#NrcOnTop`,
       type: "WATCHING",
       url: "https://www.twitch.tv/minecraftman097"
     }
