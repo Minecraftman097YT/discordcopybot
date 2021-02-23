@@ -53,12 +53,12 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: `TKR Is the Best Clan Ever`,
+      name: `Maintance`,
       type: "WATCHING",
       url: "https://www.twitch.tv/minecraftman097"
     }
   });
-  bot.user.setStatus("idle");
+  bot.user.setStatus("dnd");
 });
 
 
@@ -69,7 +69,7 @@ bot.on("guildMemberRemove", member => {
 
 bot.on("guildMemberAdd", member => {
   let msgchannel = member.guild.channels.find(`name`, "【👋】𝗪𝗲𝗹𝗰𝗼𝗺𝗲");
-  msgchannel.send(">>> ${member} ***Welcome to ⏤͟͟͞★ᴛᴋ͢ʀ㉶Family🌟!*** **Plese Send your Discord Server and Agar.io Stats when you will Join the Clan!** **When you will be a** <@&803229525558951987>**, Write** ``I Will be a Guest``");
+  msgchannel.send(`>>> ${member} ***Welcome to ⏤͟͟͞★ᴛᴋ͢ʀ㉶Family🌟!*** **Plese Send your Discord Server and Agar.io Stats when you will Join the Clan!** **When you will be a** <@&803229525558951987>**, Write** ``I Will be a Guest```);
 });
 bot.on("message", message => {
   if (message.content.toLowerCase() === 'TMSf8ball') {
