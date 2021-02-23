@@ -56,13 +56,13 @@ bot.on("ready", async () => {
       "#NrcOnTop",
       "Lows the Best!",
       "Prefix: *help",
-      "Arko not the Best"
+      "Arko the Best"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "LISTENING" });
     bot.user.setStatus("online");
   }
-  setInterval(changing_status, 20000);
+  setInterval(changing_status, 2000);
 });
 
 
