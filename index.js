@@ -49,17 +49,22 @@ function doMagic8BallVoodoo() {
   return rand[Math.floor(Math.random() * rand.length)];
 }
 
-bot.on("ready", () => {
-  console.log(`${bot.user.tag} ist nie Offline!`);
-  bot.user.setPresence({
-    game: {
-      name: `#NrcOnTop`,
-      type: "WATCHING",
-      url: "https://www.twitch.tv/minecraftman097"
-    }
-  });
-  bot.user.setStatus("dnd");
+bot.on("ready", async () => {
+  console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
+  function changing_status() {
+    let status = [
+      "#NrcOnTop",
+      "Lows the Best!",
+      "Prefix: *help",
+      "Arko not the Best"
+    ];
+    let randomStatus = status[Math.floor(Math.random() * status.length)];
+    bot.user.setActivity(randomStatus, { type: "LISTENING" });
+    bot.user.setStatus("online");
+  }
+  setInterval(changing_status, 20000);
 });
+
 
 
 bot.on("guildMemberRemove", member => {
