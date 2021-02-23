@@ -4,11 +4,12 @@ exports.run = (bot, message, args) => {
 
     const Help = new Discord.RichEmbed()
       .setTitle("**Bot Commands:**", "------------------------")
-      .addField("***help**","***Damit siehst du diese Nachricht.***")
-      .addField("***meme**", "***Schau dir paar Lustige Memes an ;).***")
-      .addField("***ping**", "***Schau dir an, was für eine Leistung der Bot Gerade hat.***")
+      .addField("***dns**","***See What Our DNS Is or our Region.***")
+      .addField("***require**", "***See what a Member Need to have.***")
+      .addField("***send**", "***This command is only for*** <#804132013208109097> ***Because You can use it in All Channels!***")
+      .addField("***rules**", "See the Clan Rules! Follow it to become no Warn!")
       .setColor("RANDOM")
-      .setFooter(`Was soll hier hin? xD`);
+      .setFooter(`Thanks me Later c:`);
     message.channel.send(Help);
     message.delete()
 }
