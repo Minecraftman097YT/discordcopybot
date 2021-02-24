@@ -10,6 +10,9 @@ const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 const fetch = require('node-fetch')
+const fs = require ('fs')
+let welcome = JSON.parse(fs.readFileSync("./storage/welcome.json", "utf8"));
+let leave = JSON.parse(fs.readFileSync("./storage/leave.json", "utf8"));
 
 
 const prefix = config.prefix;
@@ -67,23 +70,36 @@ bot.on("ready", async () => {
 
 
 
-bot.on("guildMemberRemove", member => {
-  let msgchannel = member.guild.channels.find(`name`, "👋✔willkommen-und-bye👋✔");
-  msgchannel.send(`${member} hat ShadowClan verlassen! :frowning::sob: (bot hosting by Minecraftman097#9490)`);
+bot.on("guildMemberAdd", member => {
+  let joinServer = member.guild.channels.get(welcome[member.guild.id].wID);
+  let joinEmbed = new Discord.RichEmbed()
+    .setTitle("Welcome")
+    .setDescription(
+      `${member} Is Comming! \nBe Happy an Write to ${member} **Willkommen**!`
+    )
+    .setThumbnail(
+      "https://media3.giphy.com/media/OkJat1YNdoD3W/giphy.gif?cid=790b7611fc6e28fa8241890e432333a4d2c5926ca4437b4a&rid=giphy.gif"
+    )
+    .setColor("GREEN");
+
+  if (!joinServer) return;
+  joinServer.send(joinEmbed);
 });
 
-bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "【👋】𝗪𝗲𝗹𝗰𝗼𝗺𝗲");
-  msgchannel.send(`>>> ${member} ***Welcome to ⏤͟͟͞★ᴛᴋ͢ʀ㉶Family🌟!*** **Plese Send your Discord Server and Agar.io Stats when you will Join the Clan!** **When you will be a** <@&803229525558951987>**, Write** ``I Will be a Guest```);
-});
-bot.on("message", message => {
-  if (message.content.toLowerCase() === 'TMSf8ball') {
-    let sEmbed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("8ball")
-      .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
-    message.channel.send(sEmbed)
-  }
+bot.on("guildMemberRemove", member => {
+  let leaveChannel = member.guild.channels.get(leave[member.guild.id].lID);
+  let leaveEmbed = new Discord.RichEmbed()
+    .setTitle("Goodbye")
+    .setDescription(
+      `${member} Have Leave ${member.guild.name}! \nWe Hope you come Back Later!`
+    )
+    .setThumbnail(
+      "https://media1.giphy.com/media/l396M3jF14DXr9mog/giphy.gif?cid=790b7611b25f12e79fe8320ecbc63a7289a1dd3808bbc3b1&rid=giphy.gif"
+    )
+    .setColor("RED");
+
+  if (!leaveChannel) return;
+  leaveChannel.send(leaveEmbed);
 });
 
 setInterval(async () => {
