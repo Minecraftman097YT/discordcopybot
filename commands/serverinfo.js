@@ -9,7 +9,7 @@ exports.run = (bot, message, prefixes) => {
   .setColor(3447003)
   .addField("Server ID" , `(${message.guild.id})`)  
   .addField('Owner' , `${message.guild.owner.user}`) // uff bot 
-  .addField('Member Counter' , `${message.guild.memberCount} [${message.guild.members.filter(m=>m.user).size} User | ${message.guild.members.filter(m=>m.user.bot).size} bots]`, true)
+  .addField('Member Counter' , `${message.guild.memberCount}`, true)
   .addField('Region' , message.guild.region, true)
   .addField("Server Erstellt" , `${moment.utc(message.guild.createdAt).locale('de').format("dddd, Do. MMMM YYYY")}`, true)
   .setTimestamp()
