@@ -56,10 +56,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
   function changing_status() {
     let status = [
-      "#NrcOnTop",
-      "Lows the Best!",
-      "Prefix: *help",
-      "Arko the Best"
+      "Wartung | V 1.1.1"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "LISTENING" });
@@ -75,7 +72,7 @@ bot.on("guildMemberAdd", member => {
   let joinEmbed = new Discord.RichEmbed()
     .setTitle("Welcome")
     .setDescription(
-      `${member} Is Comming! \nBe Happy an Write to ${member} **Willkommen**!`
+      `${member} Kommt bald! \nSei nett zu ihn und sagt ${member} **Willkommen**!`
     )
     .setThumbnail(
       "https://media3.giphy.com/media/OkJat1YNdoD3W/giphy.gif?cid=790b7611fc6e28fa8241890e432333a4d2c5926ca4437b4a&rid=giphy.gif"
@@ -91,7 +88,7 @@ bot.on("guildMemberRemove", member => {
   let leaveEmbed = new Discord.RichEmbed()
     .setTitle("Goodbye")
     .setDescription(
-      `${member} Have Leave ${member.guild.name}! \nWe Hope you come Back Later!`
+      `${member} Hat Verlassen ${member.guild.name}! \nWir Hoffen, du Kommst bald wieder!!`
     )
     .setThumbnail(
       "https://media1.giphy.com/media/l396M3jF14DXr9mog/giphy.gif?cid=790b7611b25f12e79fe8320ecbc63a7289a1dd3808bbc3b1&rid=giphy.gif"
