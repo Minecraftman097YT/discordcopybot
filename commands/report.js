@@ -22,7 +22,7 @@ exports.run = (bot, message, args) => {
       .addField(
         "Datum",
         `${moment
-          .utc(member.now)
+          .utc("Europe/Berlin")
           .locale("de")
           .format("dddd, Do MMMM YYYY, HH:mm:ss")}`,
         true
