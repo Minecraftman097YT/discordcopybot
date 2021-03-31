@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = (bot, message, args) => {
 
     const Help = new Discord.RichEmbed()
-      .setTitle("**Bot Commands:**", "------------------------")
+      .setTitle("**GamingTreff Commands:**", "------------------------")
       .addField("**_partner**","***Sehe unseren Partnertext.***")
       .addField("**_meme**", "***Schau dir Lustige Memes an ;)***")
       .addField("**_ping**", "***Schau dir gerne den Bot-Ping an.***")
