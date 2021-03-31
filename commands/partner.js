@@ -11,16 +11,24 @@ exports.run = (bot, message, args) => {
       "-> Über uns:",
       "Wir sind ein Kleines Server Netzwerk Wo ihr Guten Support bekommt und jemanden Finden Könnt, mit dem ihr Spielen Könnt. Außerdem Haben wir noch Kleine Minigames und Viele Talks, damit ihr Spaß auf unserem Server habt."
     )
-    .addField("-> Das Team:", "Unser Serverteam ist Immer zu Erreichen ob Support-Ticket oder PN (Privatnachricht). Außerdem Ist das serverteam Nett und Hilft euch Bei jeder Kleinigkeit.")
-    .addField("-> Was haben wir:", "- Viele Talks zum Reden")
-    .addField(" ", "- Kompetentes Team")
-    .addField(" ", "- Gute Server-Struktur")
-    .addField(" ", "- Giveaways")
-    .addField("-> Was bekommt ihr:", "- Viele Coole Internet Freunde")
-    .addField(" ", "- Viele Die mit dir Spiele Spielen")
-    .addField(" ", "- Casino Ränge zum Freischalten")
-    .addField(" ", "- Viele Giveaways")
-    .addField("Ich Hoffe, Das ich dir Ermutigt Habe, unseren Server beizutreten und ein Teil unseres Netzwerks Wirst!", "Wir Warten auf Dich!")
+    .addField(
+      "-> Das Team:",
+      "Unser Serverteam ist Immer zu Erreichen ob Support-Ticket oder PN (Privatnachricht). Außerdem Ist das serverteam Nett und Hilft euch Bei jeder Kleinigkeit."
+    )
+    .addField("-> Was haben wir:", ".")
+    .addField("1.", "Viele Talks zum Reden")
+    .addField("2.", "Kompetentes Team")
+    .addField("3.", "Gute Server-Struktur")
+    .addField("4.", "Giveaways")
+    .addField("-> Was bekommt ihr:", ".")
+    .addField("1.", "Viele Coole Internet Freunde")
+    .addField("2.", "Viele Die mit dir Spiele Spielen")
+    .addField("3.", "Casino Ränge zum Freischalten")
+    .addField("4.", "Viele Giveaways")
+    .addField(
+      "Ich Hoffe, Das ich dir Ermutigt Habe, unseren Server beizutreten und ein Teil unseres Netzwerks Wirst!",
+      "Wir Warten auf Dich!"
+    )
     .addField("Invite:", "[Link](https://discord.gg/HqrHM5UQpk)")
     .setColor("RANDOM")
     .setFooter(`.`);
