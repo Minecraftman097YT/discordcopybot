@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
-  const admin = ["795727523749036092"];
+  const admin = ["810648022240591893"];
 
   let embed0 = new Discord.RichEmbed()
     .setTitle(":x: You are not the Bot Owner!! :x:")

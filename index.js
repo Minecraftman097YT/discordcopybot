@@ -56,14 +56,11 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
   function changing_status() {
     let status = [
-      "#NrcOnTop",
-      "Lows the Best!",
-      "Prefix: *help",
-      "Arko the Best"
+      "Wartungen | V 1.1.1"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "LISTENING" });
-    bot.user.setStatus("online");
+    bot.user.setStatus("idle");
   }
   setInterval(changing_status, 2000);
 });
