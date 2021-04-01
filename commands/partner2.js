@@ -30,6 +30,7 @@ exports.run = (bot, message, args) => {
       "Wir Warten auf Dich!"
     )
     .addField("Invite:", "[Link](https://discord.gg/HqrHM5UQpk)")
+    .setPicture('https://cdn.discordapp.com/attachments/823359908690919455/826910403128721408/PicsArt_03-30-10.10.02.jpg')
     .setColor("RANDOM")
     .setFooter(`.`);
   message.channel.send(Help);
