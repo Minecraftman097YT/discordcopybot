@@ -56,13 +56,14 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
   function changing_status() {
     let status = [
-      "Wartungen | V 1.1.1"
+      "BETA | V 1.1.1",
+      "Bei Bugs/Fragen Minecraftman097#9999 Anschreiben."
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "LISTENING" });
-    bot.user.setStatus("idle");
+    bot.user.setStatus("online");
   }
-  setInterval(changing_status, 2000);
+  setInterval(changing_status, 20000);
 });
 
 
