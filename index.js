@@ -60,7 +60,7 @@ bot.on("ready", async () => {
       "Bei Bugs/Fragen Minecraftman097#9999 Anschreiben."
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
-    bot.user.setActivity(randomStatus, { type: "LISTENING" });
+    bot.user.setActivity(randomStatus, { type: "PLAYING" });
     bot.user.setStatus("online");
   }
   setInterval(changing_status, 20000);
