@@ -32,6 +32,7 @@ exports.run = (bot, message, args) => {
     .addField("Invite:", "https://discord.gg/HqrHM5UQpk")
     .setImage('https://cdn.discordapp.com/attachments/823359908690919455/826910403128721408/PicsArt_03-30-10.10.02.jpg')
     .setColor("ORANGE")
+    .setTimestamp(3600)
     .setFooter(``);
   message.channel.send(Help);
   message.delete();

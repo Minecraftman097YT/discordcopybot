@@ -9,11 +9,10 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
-const fetch = require('node-fetch')
-const fs = require ('fs')
+const fetch = require("node-fetch");
+const fs = require("fs");
 let welcome = JSON.parse(fs.readFileSync("./storage/welcome.json", "utf8"));
 let leave = JSON.parse(fs.readFileSync("./storage/leave.json", "utf8"));
-
 
 const prefix = config.prefix;
 
@@ -66,8 +65,6 @@ bot.on("ready", async () => {
   setInterval(changing_status, 20000);
 });
 
-
-
 bot.on("guildMemberAdd", member => {
   let joinServer = member.guild.channels.get(welcome[member.guild.id].wID);
   let joinEmbed = new Discord.RichEmbed()
@@ -101,7 +98,7 @@ bot.on("guildMemberRemove", member => {
 });
 
 setInterval(async () => {
-  await fetch('https://tkrbotiscord.glitch.me').then(console.log('Pinged!'))
-}, 240000)
+  await fetch("https://tkrbotiscord.glitch.me").then(console.log("Pinged!"));
+}, 240000);
 
 bot.login(TOKEN);
