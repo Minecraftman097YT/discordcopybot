@@ -14,4 +14,5 @@ exports.run = (bot, message, args) => {
       .setColor("GREEN")
       .setFooter(`Viel Spaß`);
     message.channel.send(Help);
-    message.delete()}
+    message.delete()
+}
