@@ -21,6 +21,18 @@ bot.on("message", message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
+  // Command Handler
+  try {
+    delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+
+    let commandFile = require(`./commands/${cmd}.js`);
+
+    commandFile.run(bot, message, args);
+  } catch (e) {
+    console.log(e.stack);
+  }
+});
+
 function doMagic8BallVoodoo() {
   var rand = [
     "Yes",
@@ -62,15 +74,14 @@ bot.on("ready", () => {
 });
 
 
-
 bot.on("guildMemberRemove", member => {
-  let msgchannel = member.guild.channels.find(`name`, "👋join-leavs👋");
-  msgchannel.send(`${member} hat ***LeetGames*** verlassen! :frowning::sob:`);
+  let msgchannel = member.guild.channels.find(`name`, "bye");
+  msgchannel.send(`${member} hat Melonrush verlassen! :frowning::sob:`);
 });
 
 bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "👋join-leavs👋");
-  msgchannel.send(`${member} ist ***LeetGames*** beigetreten! :tada:`);
+  let msgchannel = member.guild.channels.find(`name`, "willkommen");
+  msgchannel.send(`${member} ist Melonrush beigetreten! :tada:`);
 });
 
 bot.on("message", message => {
