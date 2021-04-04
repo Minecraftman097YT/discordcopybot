@@ -21,18 +21,6 @@ bot.on("message", message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
-  // Command Handler
-  try {
-    delete require.cache[require.resolve(`./commands/${cmd}.js`)];
-
-    let commandFile = require(`./commands/${cmd}.js`);
-
-    commandFile.run(bot, message, args);
-  } catch (e) {
-    console.log(e.stack);
-  }
-});
-
 function doMagic8BallVoodoo() {
   var rand = [
     "Yes",
@@ -47,16 +35,31 @@ function doMagic8BallVoodoo() {
   return rand[Math.floor(Math.random() * rand.length)];
 }
 
+bot.on("ready", () => {
+  console.log(`${bot.user.tag} ist Online!
+[${bot.users.size}] User
+[${bot.guilds.size}] Server`);
+});
 
-bot.on("ready", async () => {
-  console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
-  function changing_status() {
-    let status = ["BETA | V 1.1.1", "Prefix: _ | _help", "Bei Fragen Minecraftman097#9999 Anschreiben!"]
-    let randomStatus = status[Math.floor(Math.random() * status.length)]
-    bot.user.setActivity(randomStatus, {type: 'LISTENING'});
-  } 
-  setInterval(changing_status, 20000)
-})
+bot.on("ready", () => {
+  bot.user.setPresence({
+    game: {
+      name: `Maintance | Wartung!`,
+      type: "PLAYING",
+      url: ""
+    }
+  });
+  setTimeout(() => {
+    bot.user.setPresence({
+      game: {
+        name: `.`,
+        type: "WATCHING",
+        url: ""
+      }
+    });
+    bot.user.setStatus("idle");
+  }, 5000);
+});
 
 
 
