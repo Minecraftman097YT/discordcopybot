@@ -76,15 +76,15 @@ bot.on("ready", () => {
 bot.on("ready", () => {
   bot.user.setPresence({
     game: {
-      name: `ein Update...`,
-      type: "STREAMING",
+      name: `Maintance | Wartung!`,
+      type: "PLAYING",
       url: "https://www.twitch.tv/herrputins"
     }
   });
   setTimeout(() => {
     bot.user.setPresence({
       game: {
-        name: `deine Mutter an!`,
+        name: `.`,
         type: "WATCHING",
         url: "https://www.twitch.tv/herrputins"
       }
