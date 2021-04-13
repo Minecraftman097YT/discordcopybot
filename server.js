@@ -13,5 +13,5 @@ var listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
-  http.get(`http://primeempirebot.glitch.me/`);
+  http.get(`http://tkrbotdiscord.glitch.me/`);
 }, 270000);

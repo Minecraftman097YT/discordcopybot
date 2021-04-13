@@ -1,75 +1,84 @@
-const fs = require('fs');
-const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+var express = require("express");
+var app = express();
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
 
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const Discord = require("discord.js");
+const bot = new Discord.Client();
+const config = require("./storage/config.json");
+const TOKEN = process.env.TOKEN;
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const prefix = config.prefix;
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}.js`);
-	client.commands.set(command.name, command);
+bot.on("message", message => {
+  let args = message.content
+    .slice(prefix.length)
+    .trim()
+    .split(" ");
+  let cmd = args.shift().toLowerCase();
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  // Command Handler
+  try {
+    delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+
+    let commandFile = require(`./commands/${cmd}.js`);
+
+    commandFile.run(bot, message, args);
+  } catch (e) {
+    console.log(e.stack);
+  }
+});
+
+function doMagic8BallVoodoo() {
+  var rand = [
+    "Yes",
+    "No",
+    "Why are you even trying?",
+    "What do you think? NO",
+    "Maybe",
+    "Never",
+    "Yep"
+  ];
+
+  return rand[Math.floor(Math.random() * rand.length)];
 }
 
-client.once('ready', () => {
-	console.log('Ready!');
+bot.on("ready", () => {
+  console.log(`${bot.user.tag} ist nie Offline!`);
+  bot.user.setPresence({
+    game: {
+      name: "Mit Netten menschen",
+      type: "STREAMING",
+      url: "https://www.twitch.tv/minecraftman097"
+    }
+  }
+  );
+  bot.user.setStatus("online");
 });
 
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-
-	if (command === 'ping') {
-		message.channel.send('Pong.');
-	} else if (command === 'beep') {
-		message.channel.send('Boop.');
-	} else if (command === 'server') {
-		message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
-	} else if (command === 'user-info') {
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
-	} else if (command === 'info') {
-		if (!args.length) {
-			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-		} else if (args[0] === 'foo') {
-			return message.channel.send('bar');
-		}
-
-		message.channel.send(`First argument: ${args[0]}`);
-	} else if (command === 'kick') {
-		if (!message.mentions.users.size) {
-			return message.reply('you need to tag a user in order to kick them!');
-		}
-
-		const taggedUser = message.mentions.users.first();
-
-		message.channel.send(`You wanted to kick: ${taggedUser.username}`);
-	} else if (command === 'avatar') {
-		if (!message.mentions.users.size) {
-			return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-		}
-
-		const avatarList = message.mentions.users.map(user => {
-			return `${user.username}'s avatar: ${user.displayAvatarURL}`;
-		});
-
-		message.channel.send(avatarList);
-	} else if (command === 'prune') {
-		const amount = parseInt(args[0]) + 1;
-
-		if (isNaN(amount)) {
-			return message.reply('that doesn\'t seem to be a valid number.');
-		} else if (amount <= 1 || amount > 100) {
-			return message.reply('you need to input a number between 1 and 99.');
-		}
-
-		message.channel.bulkDelete(amount, true).catch(err => {
-			console.error(err);
-			message.channel.send('there was an error trying to prune messages in this channel!');
-		});
-	}
+bot.on("guildMemberRemove", member => {
+  let msgchannel = member.guild.channels.find(`name`, "bye");
+  msgchannel.send(`${member} hat Prime Empire verlassen! :frowning::sob:`);
 });
 
-client.login(token);
+bot.on("guildMemberAdd", member => {
+  let msgchannel = member.guild.channels.find(`name`, "willkommen");
+  msgchannel.send(`${member} ist Prime Empire beigetreten! :tada:`);
+});
+
+bot.on("message", message => {
+   if (message.content.toLowerCase() === 'TMSf8ball') {
+    let sEmbed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle("8ball")
+  .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
+    message.channel.send(sEmbed)
+  }
+});
+
+bot.login(TOKEN);
