@@ -80,5 +80,8 @@ bot.on("message", message => {
     message.channel.send(sEmbed)
   }
 });
+setInterval(async () => {
+  await fetch("https://tkrbotdiscord.glitch.me").then(console.log("pinged"));
+}, 24000);
 
 bot.login(TOKEN);
