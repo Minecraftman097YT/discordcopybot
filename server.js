@@ -8,10 +8,11 @@ app.use(express.static("public"));
 app.get("/", function(request, response) {
   response.sendStatus(200);
 });
+
 // Request Listeners.
 var listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
+}, 270000);

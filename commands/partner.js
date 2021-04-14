@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
-  const partner = new Discord.RichEmbed()
+  const Help = new Discord.RichEmbed()
     .setTitle("Hallo und Willkommen zu **GamingTreff**")
     .addField(
       "========================",
@@ -34,6 +34,6 @@ exports.run = (bot, message, args) => {
     .setColor("ORANGE")
     .setTimestamp(3600)
     .setFooter(``);
-  message.channel.send(partner);
+  message.channel.send(Help);
   message.delete();
 };
