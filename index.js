@@ -10,6 +10,28 @@ const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 
+bot.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    const messageArray = message.content.split(' ');
+	const cmd = messageArray[0];
+	const args = messageArray.slice(1);
+
+    if (cmd === 'umfrage'){
+        let pollChannel = message.mentions.channels.first();
+        let pollDescription = args.slice(1).join(' ');
+
+        let embedPoll = new Discord.MessageEmbed()
+        .setTitle('Neue Umfrage!')
+        .setDescription(pollDescription)
+        .setColor('GREEN')
+        let msgEmbed = await pollChannel.send(embedPoll);
+        await msgEmbed.react('✅')
+        await msgEmbed.react('❌')
+    }
+
+})
+
 const prefix = config.prefix;
 
 bot.on("message", message => {
