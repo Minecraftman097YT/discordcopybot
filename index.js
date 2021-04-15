@@ -63,7 +63,7 @@ bot.on("ready", () => {
 
 bot.on("guildMemberRemove", member => {
   let msgchannel = member.guild.channels.find(`name`, "bye");
-  msgchannel.send(`> ${member} hat Prime Empire verlassen! :frowning::sob:`);
+  msgchannel.send(`> ${member} hat Prime Empire verlassen!`);
 });
 
 bot.on("guildMemberAdd", member => {
