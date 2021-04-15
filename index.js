@@ -34,6 +34,7 @@ bot.on("message", message => {
   }
 });
 
+
 function doMagic8BallVoodoo() {
   var rand = [
     "Yes",
