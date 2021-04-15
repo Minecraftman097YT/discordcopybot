@@ -1,6 +1,7 @@
 dependencies:
   date-and-time: 0.11.1
   discord.js: 11.6.4
+  discord.js-commando: 0.12.3
   express: 4.17.1
   moment: 2.29.1
   moment-duration-format: 2.3.2
@@ -85,6 +86,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+  /common-tags/1.8.0:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==
   /content-disposition/0.5.3:
     dependencies:
       safe-buffer: 5.1.2
@@ -137,6 +144,17 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+  /discord.js-commando/0.12.3:
+    dependencies:
+      common-tags: 1.8.0
+      emoji-regex: 9.2.2
+      is-promise: 4.0.0
+      require-all: 3.0.0
+    dev: false
+    engines:
+      node: '>=12.0.0'
+    resolution:
+      integrity: sha512-BNLhTnyFuNsF1TOd9JOu8tRoV1wi3G4AG3WWMc8qtfur8W0fYQ2jmi5CklKU4Q6JqFYjHkLeRMeZv3rAfDOKjQ==
   /discord.js/11.6.4:
     dependencies:
       long: 4.0.0
@@ -162,6 +180,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+  /emoji-regex/9.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
   /encodeurl/1.0.2:
     dev: false
     engines:
@@ -389,6 +411,10 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-2z6JzQvZRa9A2Y7xC6dQQm4FSTSTNWjKIYYTt4246eMTJmIo0Q+ZyOsU66X8lxK1AbB92dFeglPLrhwpeRKO6w==
+  /is-promise/4.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==
   /is-regex/1.1.1:
     dependencies:
       has-symbols: 1.0.1
@@ -643,6 +669,12 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-2cBCniTtxcGUjDpvFfVpw323a83/0RLSGJJY5l5lcomZWhYpU2cuLdsvYqMixvsdLJ9+sTdzEkju8J8ZHDM2nA==
+  /require-all/3.0.0:
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-Rz1JcEvjEBFc4ST3c4Ox69hnExI=
   /safe-buffer/5.1.2:
     dev: false
     resolution:
@@ -804,6 +836,7 @@ shrinkwrapVersion: 3
 specifiers:
   date-and-time: ^0.11.1
   discord.js: ^11.5.1
+  discord.js-commando: ^0.12.3
   express: ^4.17.1
   moment: ^2.24.0
   moment-duration-format: ^2.3.2
