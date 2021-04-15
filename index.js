@@ -6,35 +6,13 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const client = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
-    const messageArray = message.content.split(' ');
-	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
-
-    if (cmd === 'umfrage'){
-        let pollChannel = message.mentions.channels.first();
-        let pollDescription = args.slice(1).join(' ');
-
-        let embedPoll = new Discord.MessageEmbed()
-        .setTitle('Neue Umfrage!')
-        .setDescription(pollDescription)
-        .setColor('GREEN')
-        let msgEmbed = await pollChannel.send(embedPoll);
-        await msgEmbed.react('✅')
-        await msgEmbed.react('❌')
-    }
-
-})
-
 const prefix = config.prefix;
 
-bot.on("message", message => {
+client.on("message", message => {
   let args = message.content
     .slice(prefix.length)
     .trim()
@@ -49,7 +27,7 @@ bot.on("message", message => {
 
     let commandFile = require(`./commands/${cmd}.js`);
 
-    commandFile.run(bot, message, args);
+    commandFile.run(client, message, args);
   } catch (e) {
     console.log(e.stack);
   }
@@ -69,8 +47,8 @@ function doMagic8BallVoodoo() {
   return rand[Math.floor(Math.random() * rand.length)];
 }
 
-bot.on("ready", () => {
-  console.log(`${bot.user.tag} ist nie Offline!`);
+client.on("ready", () => {
+  console.log(`${client.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
       name: "Mit Netten menschen",
@@ -82,16 +60,30 @@ bot.on("ready", () => {
   bot.user.setStatus("online");
 });
 
-
-bot.on("guildMemberRemove", member => {
-  let msgchannel = member.guild.channels.find(`name`, "bye");
-  msgchannel.send(`> ${member} hat Prime Empire verlassen! :frowning::sob:`);
-});
-
-bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "willkommen");
-  msgchannel.send(`> ${member} ist Prime Empire beigetreten! :tada:`);
-});
+bot.on('guildMemberAdd', async(member) => { // this event gets triggered when a new member joins the server!
+    // Firstly we need to define a channel
+    // either using .get or .find, in this case im going to use .get()
+    const Channel = member.guild.channels.cache.get('channelid') //insert channel id that you want to send to
+    //making embed
+    const embed = new mEmbed()
+        .setColor('GREEN')
+        .setTitle('New Member')
+        .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
+    // sends a message to the channel
+    Channel.send(embed)
+})
+bot.on('guildMemberRemove', async(member) => { // this event gets triggered when a new member leaves the server!
+    // Firstly we need to define a channel
+    // either using .get or .find, in this case im going to use .get()
+    const Channel = member.guild.channels.cache.get('channelid') //insert channel id that you want to send to
+    //making embed
+    const embed = new mEmbed()
+        .setColor('RED')
+        .setTitle('A member left the server :(')
+        .setDescription(`**${member.displayName}** has left ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
+    // sends a message to the channel
+    Channel.send(embed)
+})
 
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
@@ -106,5 +98,5 @@ setInterval(async () => {
   await fetch("https://tkrbotiscord.glitch.me").then(console.log("pinged"));
 }, 22000);
 
-bot.login(TOKEN);
+client.login(TOKEN);
 //https://tkrbotiscord.glitch.me
