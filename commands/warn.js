@@ -1,34 +1,51 @@
-const Discord = require("discord.js");
+const warnSchema = require('@schemas/warn-schema')
+const punishmentLogSchema = require('@schemas/punishment-log-schema')
 
-exports.run = (bot, message, args) => {
-  let user = message.mentions.members.first();
-  let user1 = message.mentions.users.first();
-  let grund = args.slice(1).join(" ");
-  const admin = ["522077164175228932"]
-  if (!message.guild.me.hasPermission("KICK_MEMBERS"))
-    return message.reply("Mir fehlen die Rechte dazu!");
+module.exports = {
+  commands: 'warn',
+  minArgs: 2,
+  expectedArgs: "<Target user's @> <reason>",
+  requiredRoles: ['Moderator'],
+  callback: async (message, args) => {
+    const target = message.mentions.users.first()
+    if (!target) {
+      message.reply('Please specify someone to warn.')
+      return
+    }
 
-  if (!message.member.hasPermission("KICK_MEMBERS"))
-    return message.reply("Du hast keine Premission `Mitglider Kicken` um diesen Befehl auszuführen!");
+    args.shift()
 
-  if (!user)
-    return message.reply("Bitte erwähne einen User, um ihn zu warnen!");
+    const guildId = message.guild.id
+    const userId = target.id
+    const reason = args.join(' ')
 
-  if (user.id === message.author.id)
-    return message.reply("Du kannst dich nicht selbst warnen!");
+    const warning = {
+      author: message.member.user.tag,
+      timestamp: new Date().getTime(),
+      reason,
+    }
 
-  if (!grund)
-    return message.reply(
-      `Bitte nenne einen Grund, um ${user1.username} zu warnen!`
-    );
+    await warnSchema.findOneAndUpdate(
+      {
+        guildId,
+        userId,
+      },
+      {
+        guildId,
+        userId,
+        $push: {
+          warnings: warning,
+        },
+      },
+      {
+        upsert: true,
+      }
+    )
 
-  let warn = new Discord.RichEmbed()
-  .setTitle(`${user1.tag} wurde verwarnt!`)
-  .addField("User" , `${user1.tag}`)
-  .addField("Grund" , `${grund}`)
-  .addField("Von", `${message.author}`)
-  .setTimestamp()
-  .setColor("GREEN")
-  message.channel.send(warn)
-  message.react('✅')
-};
+    await new punishmentLogSchema({
+      guildId,
+      userId,
+      command: message.content,
+    }).save()
+  },
+}
