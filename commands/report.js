@@ -6,16 +6,16 @@ module.exports = {
   usage: "<User mention>",
   run: async (bot, message, args) => {
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
-      return message.channel.send(`No.`);
+      return message.channel.send(`Nope ;)`);
     let User = message.mentions.users.first() || null;
 
     if (User == null) {
-      return message.channel.send(`You did not mention a user!`);
+      return message.channel.send(`Du Hast kein User Getagt`);
     } else {
       let Reason = message.content.slice(bot.prefix.length + 22 + 7) || null;
       if (Reason == null) {
         return message.channel.send(
-          `You did not specify a reason for the report!`
+          `Du hast keinen Grund Angegeben!`
         );
       }
       let Avatar = User.displayAvatarURL();
@@ -24,10 +24,10 @@ module.exports = {
       );
       if (!Channel)
         return message.channel.send(
-          `There is no channel in this guild which is called \`reports\``
+          `Es gibt auf diesen Server keinen Channel Namens #reports`
         );
       let Embed = new MessageEmbed()
-        .setTitle(`New report!`)
+        .setTitle(`Neuer report!`)
         .setDescription(
           `Der User \`${message.author.tag}\` Hat \`${User.tag}\` Gemeldet! `
         )
