@@ -8,7 +8,7 @@ client.on('ready', () => console.log(client.user.tag + " has logged in."));
 
 client.on('message', async message => {
     if(message.author.bot) return;
-    if(message.content.toLowerCase() === '!createpoll') {
+    if(message.content.toLowerCase() === 'cpoll') {
         if(userCreatedPolls.has(message.author.id)) {
             message.channel.send("You already have a poll going on right now.");
             return;

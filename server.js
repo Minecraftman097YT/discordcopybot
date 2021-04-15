@@ -14,4 +14,4 @@ var listener = app.listen(process.env.PORT, function() {
 });
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
+}, 220000);
