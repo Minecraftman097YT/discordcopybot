@@ -1,95 +1,79 @@
-const Commando = require('discord.js-commando')
-const axios = require('axios')
-const { CanvasRenderService } = require('chartjs-node-canvas')
-const { MessageAttachment } = require('discord.js')
+const Discord = require('discord.js');
+const api = require('covidapi')
+// install the covid package
+const fetch = require('node-fetch');
+// installing the package to the fetch links
 
-const width = 800
-const height = 600
 
-const chartCallback = (ChartJS) => {
-  ChartJS.plugins.register({
-    beforeDraw: (chartInstance) => {
-      const { chart } = chartInstance
-      const { ctx } = chart
-      ctx.fillStyle = 'white'
-      ctx.fillRect(0, 0, chart.width, chart.height)
-    },
-  })
-}
+module.exports.run = async (Client, message, args, prefix) => {
+    if(!message.content.startsWith(prefix)) return;
 
-module.exports = class CovidCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'covid',
-      group: 'misc',
-      memberName: 'covid',
-      description: 'Displays stats about covid-19',
-    })
-  }
 
-    run = async (message, args) => {
-    const days = parseInt(args) || 30
+        let countries = args.join(" ");
+        // the country = =covid country
 
-    const url = 'https://api.covidtracking.com/v1/us/daily.json'
-    let { data: results } = await axios.get(url)
-    results = results.slice(0, days).reverse()
+ 		// if there is no country provided it sends this embed
+        const noArgs = new Discord.MessageEmbed()
+        .setTitle('Ungültig')
+        .setColor(0xFF0000)
+        .setDescription('You Can Try Using **_covid all** or **_covid Germany**')
+		// sends the noArgs embed
+        if(!args[0]) return message.channel.send(noArgs);
 
-    const labels = []
-    const deaths = []
-    const cases = []
-    const recovered = []
 
-    for (const result of results) {
-      let date = String(result.date)
-      const year = date.substring(0, 4)
-      const month = date.substring(4, 6)
-      const day = date.substring(6, 8)
-      labels.push(`${day}/${month}/${year}`)
+		
+  		// if some1 typed =covid all it will send the worldwide covid cases
+        if(args[0] === "all"){
+          	// fetching the covid data
+            fetch(`https://covid19.mathdro.id/api`)
+            .then(response => response.json())
+            .then(data => {
+              	// gets the worldwide's covid data from the website
+                let confirmed = data.confirmed.value.toLocaleString()
+                let recovered = data.recovered.value.toLocaleString()
+                let deaths = data.deaths.value.toLocaleString()
 
-      deaths.push(result.death)
-      cases.push(result.positive)
-      recovered.push(result.recovered)
+                // making the covid embed with the world stats
+                const embed = new Discord.MessageEmbed()
+                .setTitle(`Worldwide COVID-19 Stats 🌎`)
+                .addField('Bestätigte Fälle', confirmed)
+                .addField('Geheilt', recovered)
+                .addField('Gestorben', deaths)
+
+                message.channel.send(embed)
+            })
+
+
+        // so if someone send =covid (country) not =covid all it will send this
+        } else {
+          	// fetching the data of all the countries
+            fetch(`https://covid19.mathdro.id/api/countries/${countries}`)
+            .then(response => response.json())
+            .then(data => {
+              	// getting the data of the countries
+                let confirmed = data.confirmed.value.toLocaleString()
+                let recovered = data.recovered.value.toLocaleString()
+                let deaths = data.deaths.value.toLocaleString()
+
+                // making a embed with the info of the country that you choosed
+                const embed = new Discord.MessageEmbed()
+                .setTitle(`COVID-19 Stats for **${countries}**`)
+                .addField('Bestätigte Fälle', confirmed)
+                .addField('Geheilt', recovered)
+                .addField('Gestorben', deaths)
+
+                message.channel.send(embed)
+            }).catch(e => {
+                // if he can't find the country that u said it will send this message
+                return message.channel.send('Ungültiges Lans')
+            })
+        }
     }
 
-    const canvas = new CanvasRenderService(width, height, chartCallback)
+    
 
-    const configuration = {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [
-          {
-            label: 'Cases',
-            data: cases,
-            color: '#7289d9',
-            backgroundColor: '#7289d9',
-            borderColor: '#7289d9',
-            fill: false,
-          },
-          {
-            label: 'Deaths',
-            data: deaths,
-            color: '#b32f38',
-            backgroundColor: '#b32f38',
-            borderColor: '#b32f38',
-            fill: false,
-          },
-          {
-            label: 'Recovered',
-            data: recovered,
-            color: '#592ec2',
-            backgroundColor: '#592ec2',
-            borderColor: '#592ec2',
-            fill: false,
-          },
-        ],
-      },
-    }
 
-    const image = await canvas.renderToBuffer(configuration)
-
-    const attachment = new MessageAttachment(image)
-
-    message.channel.send(attachment)
-  }
-}
+module.exports.help = {
+    name: `covid`,
+    aliases: ['corona', 'coronavirus']
+};
