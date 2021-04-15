@@ -9,6 +9,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
+const fetch = require('node-fetch')
 
 const prefix = config.prefix;
 
