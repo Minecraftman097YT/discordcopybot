@@ -6,13 +6,13 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 
 const prefix = config.prefix;
 
-client.on("message", message => {
+bot.on("message", message => {
   let args = message.content
     .slice(prefix.length)
     .trim()
@@ -27,7 +27,7 @@ client.on("message", message => {
 
     let commandFile = require(`./commands/${cmd}.js`);
 
-    commandFile.run(client, message, args);
+    commandFile.run(bot, message, args);
   } catch (e) {
     console.log(e.stack);
   }
@@ -47,8 +47,8 @@ function doMagic8BallVoodoo() {
   return rand[Math.floor(Math.random() * rand.length)];
 }
 
-client.on("ready", () => {
-  console.log(`${client.user.tag} ist nie Offline!`);
+bot.on("ready", () => {
+  console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
       name: "Mit Netten menschen",
@@ -60,30 +60,16 @@ client.on("ready", () => {
   bot.user.setStatus("online");
 });
 
-bot.on('guildMemberAdd', async(member) => { // this event gets triggered when a new member joins the server!
-    // Firstly we need to define a channel
-    // either using .get or .find, in this case im going to use .get()
-    const Channel = member.guild.channels.cache.get('channelid') //insert channel id that you want to send to
-    //making embed
-    const embed = new mEmbed()
-        .setColor('GREEN')
-        .setTitle('New Member')
-        .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
-    // sends a message to the channel
-    Channel.send(embed)
-})
-bot.on('guildMemberRemove', async(member) => { // this event gets triggered when a new member leaves the server!
-    // Firstly we need to define a channel
-    // either using .get or .find, in this case im going to use .get()
-    const Channel = member.guild.channels.cache.get('channelid') //insert channel id that you want to send to
-    //making embed
-    const embed = new mEmbed()
-        .setColor('RED')
-        .setTitle('A member left the server :(')
-        .setDescription(`**${member.displayName}** has left ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
-    // sends a message to the channel
-    Channel.send(embed)
-})
+
+bot.on("guildMemberRemove", member => {
+  let msgchannel = member.guild.channels.find(`name`, "bye");
+  msgchannel.send(`> ${member} hat Prime Empire verlassen! :frowning::sob:`);
+});
+
+bot.on("guildMemberAdd", member => {
+  let msgchannel = member.guild.channels.find(`name`, "willkommen");
+  msgchannel.send(`> ${member} ist Prime Empire beigetreten! :tada:`);
+});
 
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
@@ -98,5 +84,5 @@ setInterval(async () => {
   await fetch("https://tkrbotiscord.glitch.me").then(console.log("pinged"));
 }, 22000);
 
-client.login(TOKEN);
+bot.login(TOKEN);
 //https://tkrbotiscord.glitch.me
