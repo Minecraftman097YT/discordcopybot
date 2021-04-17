@@ -10,7 +10,6 @@ exports.run = (bot, message, args) => {
     .addField("**_ping**", "***Schau dir gerne den Bot-Ping an.***")
     .addField("**_rules**", "***Schau dir die Regeln an.***")
     .addField("**_botinfo**", "***Schau dir die Botinfo an.***")
-    .addField("**_serverinfo**", "***Schau dir Serverinfo an.***")
     .addField("**_report**", "***Melde ein Mitglied.***")
     .setColor("GREEN")
     .setFooter(`Angefragt von: ${message.author.tag}`);
