@@ -1,41 +1,26 @@
-const { MessageEmbed } = require("discord.js")
+const Discord = require("discord.js");
 
+exports.run = (bot, message, args) => {
+  let msg = args.slice(0).join(" ")
+  let user1 = message.mentions.users.first();
+  
+  const admin = ["522077164175228932"]
+  
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Du hast keine Berechtigungen :x:")
 
-module.exports = {
-  name: "suggest",
-  usage: "suggest <message>",
-  description: "Send your Suggestion",
-  category: "main",
-  run: (client, message, args) => {
-    
-    if(!args.length) {
-      return message.channel.send("Bitte Schreibe was Dahinter!")
-    }
-    
-    let channel = message.guild.channels.cache.find((x) => (x.name === "umfragen" || x.name === "suggestions"))
-    
-    
-    if(!channel) {
-      return message.channel.send("Es gibt kein Kanal, mit diesen Namen.")
-    }
-                                                    
-    
-    let embed = new MessageEmbed()
-    .setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL())
-    .setThumbnail(message.author.avatarURL())
-    .setColor("#ff2050")
-    .setDescription(args.join(" "))
-    .setTimestamp()
-    
-    
-    channel.send(embed).then(m => {
-      m.react("✅")
-      m.react("❌")
-    })
-    
+  if (!msg) return message.reply(".")
 
-    
-    message.channel.send("Sended Your Suggestion to " + channel)
-    
-  }
-}
+  let embed = new Discord.RichEmbed()
+  .setTitle("Prime Empire Umfrage!")
+  .addField(`Frage:`, `${msg}`)
+  
+  .setColor("BLUE")
+  .setFooter(`Umfrage von: ${message.author.tag}`)
+  .setThumbnail("https://cdn.discordapp.com/attachments/814438593849851936/832556628841988107/image0.jpg")
+  .setTimestamp()
+  message.delete()
+  message.channel.send(embed).then(sentEmbed => {
+  sentEmbed.react("✅")
+  sentEmbed.react("❌")
+  })
+};
