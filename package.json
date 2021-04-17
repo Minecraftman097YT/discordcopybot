@@ -29,9 +29,10 @@
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
     "module-alias": "^2.2.2",
     "mongoose": "^5.9.24",
-    "redis": "^3.0.2"
+    "redis": "^3.0.2",
+    "common-tags": "^1.8.0"
   },
-    "_moduleAliases": {
+  "_moduleAliases": {
     "@root": ".",
     "@schemas": "./schemas",
     "@util": "./util",
