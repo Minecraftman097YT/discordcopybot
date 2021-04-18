@@ -9,4 +9,4 @@ exports.run = (bot, message, args) => {
       .setFooter(`.`);
     message.channel.send(Help);
     message.delete()
-}    
+}
