@@ -28,7 +28,7 @@ bot.on("message", message => {
 
     let commandFile = require(`./commands/${cmd}.js`);
 
-    commandFile.run(bot, message, args);
+    commandFile.execute(bot, message, args);
   } catch (e) {
     console.log(e.stack);
   }
