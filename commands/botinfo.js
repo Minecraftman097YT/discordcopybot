@@ -12,7 +12,7 @@ exports.run = (bot, message, args) => {
     .addField("🤖Botversion🤖:", "`12.0.0`")
     .addField("👽BotSprache👽:", "`Javascript`")
     .addField("**User**", ` ${bot.users.size}`)
-    .setColor("DARKBLUE")``
+    .setColor("DARKBLUE")
     .setThumbnail(bot.user.avatarURL)
     .setFooter(`Angefragt von: ${message.author.tag}`);
 

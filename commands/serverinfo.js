@@ -10,7 +10,7 @@ module.exports.command = {
 }
 
 exports.run = async (bot, message, args) => {
-    let embed = new Discord.MessageEmbed()
+    let embed = new Discord.RichEmbed()
         .setTitle("Server Info")
         .setColor("WHITE")
         .setThumbnail(message.guild.splash)
@@ -21,5 +21,5 @@ exports.run = async (bot, message, args) => {
         .addField("Server Owner:", message.guild.owner, true)
         .addField("Mitglieder:", message.guild.memberCount, true)
 
-    return message.channel.send(embed)
+    message.channel.send(embed)
 }
