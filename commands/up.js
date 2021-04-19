@@ -16,5 +16,10 @@ exports.run = (bot, message, args) => {
   .setColor("BLUE")
   .setTimestamp()
   message.delete()
-  message.channel.send(embed).then
+  message.channel.send(embed).then(sentEmbed => {
+    sentEmbed.react("🇳")
+    sentEmbed.react("🇮")
+    sentEmbed.react("🇨")
+    sentEmbed.react("🇪")
+    })
 };
