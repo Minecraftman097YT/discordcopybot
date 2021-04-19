@@ -83,6 +83,7 @@ bot.on("message", message => {
   .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
     message.channel.send(sEmbed)
   }
+  
 });
 setInterval(async () => {
   await fetch("https://tkrbotiscord.glitch.me").then(console.log("pinged"));
