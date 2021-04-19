@@ -1,12 +1,26 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
+  const Help = new Discord.RichEmbed()
+    .setTitle("<:PrimeEmpire:820742150915358761> **Prime Empire** ", "------------------------")
+    .setDescription(
+      "<a:info:827806069404205076> **Joint** gerne Prime Empire, denn wir bieten sehr viele **Coole** Sachen! **Wie zB:**"
+    )
+    .addField(":performing_arts: Self Roles \n\n:speech_balloon: Viele Chats \n\n:loud_sound: Viele Sprachkanäle \n\n:heavy_plus_sign: Join4Create \n\n:game_die: Viele Minigames \n\n:tada: Viele Giveaways", ".")
 
-    const Help = new Discord.RichEmbed()
-      .setTitle("**Prime Empire**", "------------------------")
-      .addField("**Wartung!**","***Der Befehl Befindet sich Aktuell in einer Wartungsphase! Bitte Warten.***")
-      .setColor("RED")
-      .setFooter(`.`);
-    message.channel.send(Help);
-    message.delete()
-}
+    .addField(":tada: Viele Giveaways", ".")
+    .addField("<a:Alarm:827807392589676564> Guten Support", ".")
+    .addField(":handshake: Partnerschaften ab 80 Usern.", ".")
+    .addField("<a:Stern:827807184887873538> Aktive Community", ".")
+    .addField(":joy: Viele Memes", ".")
+    .addField(":bulb: Wir Hören auf die Community", ".")
+    .addField(":no_entry_sign: Keine @everyone Pings", ".")
+    .addField(":globe_with_meridians: Und Vieles mehr!", ".")
+    .addField("<a:info:827806069404205076>", "Unser Ziel sind die **200 Member**, also kommt gerne drauf, du wirst es nicht bereuen!")
+    .addField("Link:", "[Klicke Hier](https://discord.gg/qAjrrkQADQ)")
+    .setColor("ORANGE")
+    .setImage("https://cdn.discordapp.com/attachments/811928066833776671/832110695037927434/image0.gif")
+    .setFooter(``);
+  message.channel.send(Help);
+  message.delete();
+};
