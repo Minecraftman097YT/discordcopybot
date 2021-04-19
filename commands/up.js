@@ -15,6 +15,6 @@ exports.run = (bot, message, args) => {
   .setDescription(`${msg}`)
   .setColor("BLUE")
   .setTimestamp()
-  message.channel.send(embed)
   message.delete()
+  message.channel.send(embed).then
 };

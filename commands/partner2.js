@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
-  const Help = new Discord.RichEmbed()
+  const Partner = new Discord.MessageEmbed()
     .setTitle("<:PrimeEmpire:820742150915358761> **Prime Empire** ", "------------------------")
     .setDescription(
       "<a:info:827806069404205076> **Joint** gerne Prime Empire, denn wir bieten sehr viele **Coole** Sachen! **Wie zB:**"
@@ -11,6 +11,6 @@ exports.run = (bot, message, args) => {
     .setColor("ORANGE")
     .setImage("https://cdn.discordapp.com/attachments/811928066833776671/832110695037927434/image0.gif")
     .setFooter(``);
-  message.channel.send(Help);
+  message.channel.send(Partner);
   message.delete();
 };
