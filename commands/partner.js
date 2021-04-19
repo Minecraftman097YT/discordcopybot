@@ -14,6 +14,7 @@ exports.run = (bot, message, args) => {
     .addField(":joy: Viele Memes \n\n:bulb: Wir Hören auf die Community", "Zum schluss noch")
     .addField("\n\n:globe_with_meridians: Und Vieles mehr!", "<a:info:827806069404205076> Unser Ziel sind die **200 Member**, also kommt gerne drauf, du wirst es nicht bereuen!")
     .addField("Link:", "[Klicke Hier](https://discord.gg/qAjrrkQADQ)")
+    .addField("User:", `Error 401`)
     .setColor("ORANGE")
     .setImage("https://cdn.discordapp.com/attachments/811928066833776671/832110695037927434/image0.gif")
     .setFooter(``);
