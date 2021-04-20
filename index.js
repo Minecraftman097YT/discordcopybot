@@ -53,8 +53,8 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: "mit Prime Empire",
-      type: "STREAMING",
+      name: "Chats von Prime Empire",
+      type: "LISTENING",
       url: "https://www.twitch.tv/minecraftman097"
     }
   }
