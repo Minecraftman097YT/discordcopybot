@@ -6,7 +6,7 @@ exports.run = (bot, message, args) => {
   
   const admin = ["522077164175228932"]
   
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Du hast keine Berechtigungen :x:")
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Du hast keine Berechtigungen :x:")
 
   if (!msg) return message.reply(".")
 
