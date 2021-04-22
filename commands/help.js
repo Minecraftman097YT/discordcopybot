@@ -15,7 +15,6 @@ exports.run = (bot, message, args) => {
     .setFooter(`Angefragt von: ${message.author.tag}`);
   message.channel.send(Help);
   message.delete();
-  
 };
 module.exports.command = {
   name: "help",
