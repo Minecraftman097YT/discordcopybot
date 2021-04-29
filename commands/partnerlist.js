@@ -15,9 +15,10 @@ exports.run = (bot, message, args) => {
     .addField("ArrowGaming \nInhaber: unknown", "[Klicke Hier](https://discord.gg/bd7Sa7rRG9)\n**---------------**")
     .addField("GameGash \nInhaber: Cindai#0309", "[Klicke Hier](https://discord.gg/wPeJRU4qF4)\n**---------------**")
     .addField("★Chat & Gaming Lounge★ \nInhaber: flix#8194", "[Klicke Hier](https://discord.gg/u6m2Z4cbJM)\n**---------------**")
-    .addField("Drip \nInhaber: Labinnac#0187", "[Klicke Hier]()\n**---------------**")
-    .addField("Kuschelecke \nInhaber: ", "[Klicke Hier]()\n**---------------**")
-    .addField("Kuschelecke \nInhaber: ", "[Klicke Hier]()\n**---------------**")
+    .addField("Drip \nInhaber: Labinnac#0187", "[Klicke Hier](https://discord.gg/wNYBZrNDJW)\n**---------------**")
+    .addField("Kyoko Family \nInhaber: GAMIX#3566", "[Klicke Hier](https://discord.gg/zpUufPhCQJ)\n**---------------**")
+    .addField("CrazyEmpire \nInhaber: Ko.rex-hi#4904", "[Klicke Hier](https://discord.gg/DSr8HbmPGT)\n**---------------**")
+    .addField("TXM \nInhaber: ", "[Klicke Hier](https://discord.gg/dHNTkmM)\n**---------------**")
     .setColor("ORANGE")
     .setFooter(
       `Wenn du Möchtest, Kannst du Gerne auch einen Unserem Partner Server Beitreten. Das Beitreten eines Partner Servers ist nicht Pflicht!`
