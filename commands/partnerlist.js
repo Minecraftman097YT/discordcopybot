@@ -18,7 +18,7 @@ exports.run = (bot, message, args) => {
     .addField("Drip \nInhaber: Labinnac#0187", "[Klicke Hier](https://discord.gg/wNYBZrNDJW)\n**---------------**")
     .addField("Kyoko Family \nInhaber: GAMIX#3566", "[Klicke Hier](https://discord.gg/zpUufPhCQJ)\n**---------------**")
     .addField("CrazyEmpire \nInhaber: Ko.rex-hi#4904", "[Klicke Hier](https://discord.gg/DSr8HbmPGT)\n**---------------**")
-    .addField("TXM \nInhaber: ", "[Klicke Hier](https://discord.gg/dHNTkmM)\n**---------------**")
+    .addField("TXM \nInhaber: Moritztxm#5312", "[Klicke Hier](https://discord.gg/dHNTkmM)\n**---------------**")
     .setColor("ORANGE")
     .setFooter(
       `Wenn du Möchtest, Kannst du Gerne auch einen Unserem Partner Server Beitreten. Das Beitreten eines Partner Servers ist nicht Pflicht!`
