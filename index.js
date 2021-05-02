@@ -72,9 +72,17 @@ bot.on("guildMemberRemove", member => {
 
 bot.on("guildMemberAdd", member => {
   let msgchannel = member.guild.channels.find(`name`, "┌💬│hauptchat");
-  msgchannel.send(`> ${member} ist Prime Empire beigetreten! :tada:`);
-});
+  msgchannel.send(`>>> ${member} ist
+  **${member.guild.name}**
 
+  ***beigetreten!***
+
+   :tada:
+  Viel Glück!
+  Dank dir hat der Server jetzt ${member.guild.memberCount} User
+  
+  **Sagt Willkommen und seit Nett zu ihm!**`);
+});
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
     let sEmbed = new Discord.RichEmbed()
@@ -83,7 +91,6 @@ bot.on("message", message => {
   .addDescriptition('Your anwser is:' + doMagic8BallVoodoo())
     message.channel.send(sEmbed)
   }
-  
 });
 setInterval(async () => {
   await fetch("https://tkrbotiscord.glitch.me").then(console.log("pinged"));
