@@ -71,7 +71,7 @@ bot.on("guildMemberRemove", member => {
 });
 
 bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "willkommen");
+  let msgchannel = member.guild.channels.find(`name`, "┌💬│hauptchat");
   msgchannel.send(`> ${member} ist Prime Empire beigetreten! :tada:`);
 });
 
