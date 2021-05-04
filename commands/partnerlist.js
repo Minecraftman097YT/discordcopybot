@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = (bot, message, args) => {
   const Partner = new Discord.RichEmbed()
     .setTitle(
-      "<:PrimeEmpire:820742150915358761> **Prime Empire** ",
+      "**Prime Empire Partnerliste** ",
       "------------------------"
     )
     .setDescription(
