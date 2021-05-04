@@ -101,11 +101,15 @@ bot.on("guildMemberRemove", member => {
 
 bot.on("guildMemberAdd", (member) => {
   let channelID = '831429040198909965'
-  
+  if(member.guild.id != '831429040198909962') return;
   let embed = new Discord.MessageEmbed()
   .setTitle('Neuling')
   .setDescription('Ein Neues Mitglied ist auf den Server Gelandet.')
-  .addField(`${member.user.tag`)
+  .addField(`${member.user.tag} Hat den Server Betreten und ist in Wenigen Sekunden da.`, `Sagt Willkommen und Seit Nett zu Ihn!`)
+  .setColor('ORANGE')
+  .setTimestamp()
+  .setFooter("")
+  bot.channels.cache.get(channelID).send(embed);
 })
 
 bot.on("message", message => {
