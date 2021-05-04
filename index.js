@@ -82,8 +82,14 @@ bot.on('message', message => {
 });
 
 bot.on('message', message => {
-  if (message.content === '') {
-    message.channel.send('>>> **Hallo. Wie Geht es dir?**');
+  if (message.content === 'lol') {
+    message.channel.send('>>> **Was? Findest du es Etwa Lustig? Komisch...**');
+  }
+});
+
+bot.on('message', message => {
+  if (message.content === 'ja') {
+    message.channel.send('>>> **Was?!**');
   }
 });
 
@@ -94,7 +100,7 @@ bot.on("guildMemberRemove", member => {
 });
 
 bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "┌💬│hauptchat");
+  let msgchannel = member.guild.channels.find(`name`, "┌💬-hauptchat");
   msgchannel.send(`>>> ${member} ist
   **${member.guild.name}**
 
@@ -106,6 +112,7 @@ bot.on("guildMemberAdd", member => {
   
   **Sagt Willkommen und seit Nett zu ihm!**`);
 });
+
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
     let sEmbed = new Discord.RichEmbed()
