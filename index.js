@@ -62,9 +62,32 @@ bot.on("ready", () => {
   bot.user.setStatus("online");
 });
 
+//Commands Ohne Prefix
+bot.on('message', message => {
+  if (message.content === 'Hallo') {
+    message.channel.send('>>> **Hallo. Wie Geht es dir?**');
+  }
+});
 
+bot.on('message', message => {
+  if (message.content === 'Gut') {
+    message.channel.send('>>> **Freut mich.**');
+  }
+});
 
+bot.on('message', message => {
+  if (message.content === 'Schlecht') {
+    message.channel.send('>>> **Ok. Ich Hoffe, Dir geht es bald Besser.**');
+  }
+});
 
+bot.on('message', message => {
+  if (message.content === '') {
+    message.channel.send('>>> **Hallo. Wie Geht es dir?**');
+  }
+});
+
+//Welcome-Bye
 bot.on("guildMemberRemove", member => {
   let msgchannel = member.guild.channels.find(`name`, "bye");
   msgchannel.send(`> ${member} hat Prime Empire verlassen!`);
