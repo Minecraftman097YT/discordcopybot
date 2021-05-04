@@ -99,19 +99,14 @@ bot.on("guildMemberRemove", member => {
   msgchannel.send(`> ${member} hat Prime Empire verlassen!`);
 });
 
-bot.on("guildMemberAdd", member => {
-  let msgchannel = member.guild.channels.find(`name`, "┌💬-hauptchat");
-  msgchannel.send(`>>> ${member} ist
-  **${member.guild.name}**
-
-  ***beigetreten!***
-
-   :tada:
-  Viel Glück!
-  Dank dir hat der Server jetzt ${member.guild.memberCount} User
+bot.on("guildMemberAdd", (member) => {
+  let channelID = '831429040198909965'
   
-  **Sagt Willkommen und seit Nett zu ihm!**`);
-});
+  let embed = new Discord.MessageEmbed()
+  .setTitle('Neuling')
+  .setDescription('Ein Neues Mitglied ist auf den Server Gelandet.')
+  .addField(`${member.user.tag`)
+})
 
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
