@@ -1,18 +1,15 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
-  
   let embed = new Discord.RichEmbed()
-  .setTitle("Pong! :ping_pong:")
-   .setThumbnail(bot.user.avatarURL) .setThumbnail(bot.user.avatarURL) .setDescription(`${bot.ping} ms`) 
-     
-  
-  .setTimestamp()
+    .setTitle("Pong! :ping_pong:")
+    .setThumbnail(bot.user.avatarURL)
+    .setThumbnail(bot.user.avatarURL)
+    .setDescription(`${bot.ping} ms`)
 
- 
-  
-  .setColor("DARKBLUE")
-  message.channel.send(embed)
-  message.delete()
+    .setTimestamp()
+
+    .setColor("DARKBLUE");
+  message.channel.send(embed);
+  message.delete();
 };
-
