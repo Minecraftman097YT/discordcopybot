@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
     .addField("Kyoko Family \nInhaber: GAMIX#3566", "[Klicke Hier](https://discord.gg/zpUufPhCQJ)\n**---------------**")
     .addField("CrazyEmpire \nInhaber: Ko.rex-hi#4904", "[Klicke Hier](https://discord.gg/DSr8HbmPGT)\n**---------------**")
     .addField("TXM \nInhaber: Moritztxm#5312", "[Klicke Hier](https://discord.gg/dHNTkmM)\n**---------------**")
-    .addField("» VibeCrew Community \nInhaber: ! Akiroᵛᶤᵇᵉ#0001", "[Klicke Hier]()\n**---------------**")
+    .addField("» VibeCrew Community \nInhaber: ! Akiroᵛᶤᵇᵉ#0001", "[Klicke Hier](https://discord.gg/qgFjCHXd6d)\n**---------------**")
     .setColor("ORANGE")
     .setFooter(
       `Wenn du Möchtest, Kannst du Gerne auch einen Unserem Partner Server Beitreten. Das Beitreten eines Partner Servers ist nicht Pflicht!`
