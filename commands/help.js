@@ -5,12 +5,12 @@ exports.run = (bot, message, args) => {
   
   const Help = new Discord.RichEmbed()
     .setTitle("**Prime Empire Bot Commands:**", "------------------------")
-    .addField("**_partner**", "***Sehe unseren Partnertext.***")
-    .addField("**_meme**", "***Schau dir Lustige Memes an ;)***")
-    .addField("**_ping**", "***Schau dir gerne den Bot-Ping an.***")
-    .addField("**_rules**", "***Schau dir die Regeln an.***")
-    .addField("**_botinfo**", "***Schau dir die Botinfo an.***")
-    .addField("**_report**", "***Melde ein Mitglied.***")
+    .addField("**_partner**", "Benutzung: **_partner**\n**In Wartungen**")
+    .addField("**_meme**", "Benutzung: **_meme**")
+    .addField("**_ping**", "Benutzung: **_ping**")
+    .addField("**_rules**", "Benutzung: **_rules**\n*In Wartungen!")
+    .addField("**_botinfo**", "Benutzung: **_botinfo**")
+    .addField("**_report**", "Benutzung: **_report <@user> <grund>**")
     .setColor("GREEN")
     .setFooter(`Angefragt von: ${message.author.tag}`);
   message.channel.send(Help);
