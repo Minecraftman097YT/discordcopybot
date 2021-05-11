@@ -10,6 +10,9 @@ const bot = new Discord.Client();
 const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 const fetch = require('node-fetch')
+let welcome = JSON.parse(fs.readFileSync("./storages/welcome.json", "utf8"));
+let leave = JSON.parse(fs.readFileSync("./storages/leave.json", "utf8"));
+const fs = require("fs");
 
 const prefix = config.prefix;
 
@@ -94,24 +97,41 @@ bot.on('message', message => {
 });
 
 //Welcome-Bye
-bot.on("guildMemberRemove", member => {
-  let msgchannel = member.guild.channels.find(`name`, "bye");
-  msgchannel.send(`> ${member} hat Prime Empire verlassen!`);
+
+bot.on("guildMemberAdd", member => {
+  let joinServer = member.guild.channels.get(welcome[member.guild.id].wID);
+  let joinEmbed = new Discord.RichEmbed()
+    .setTitle("Willkommen")
+    .setDescription(
+      `${member} kommt sofort! \nSeit nett zu ihn und schreibt **Willkommen**!`
+    )
+    .setThumbnail(
+      "https://media3.giphy.com/media/OkJat1YNdoD3W/giphy.gif?cid=790b7611fc6e28fa8241890e432333a4d2c5926ca4437b4a&rid=giphy.gif"
+    )
+    .setColor("GREEN");
+
+  if (!joinServer) return;
+  joinServer.send(joinEmbed);
 });
 
-bot.on("guildMemberAdd", (member) => {
-  let channelID = '831429040198909965'
-  if(member.guild.id != '831429040198909962') return;
-  let embed = new Discord.MessageEmbed()
-  .setTitle('Neuling')
-  .setDescription('Ein Neues Mitglied ist auf den Server Gelandet.')
-  .addField(`${member.user.tag} Hat den Server Betreten und ist in Wenigen Sekunden da.`, `Sagt Willkommen und Seit Nett zu Ihn!`)
-  .setColor('ORANGE')
-  .setTimestamp()
-  .setFooter("")
-  bot.channels.cache.get(channelID).send(embed);
-})
+bot.on("guildMemberRemove", member => {
+  let leaveChannel = member.guild.channels.get(leave[member.guild.id].lID);
+  let leaveEmbed = new Discord.RichEmbed()
+    .setTitle("Aufwiedersehn")
+    .setDescription(
+      `${member} hat unsernen Server ${member.guild.name} verlassen! \nWir hoffen du hattes eine schöne zeit bei uns!`
+    )
+    .setThumbnail(
+      "https://media1.giphy.com/media/l396M3jF14DXr9mog/giphy.gif?cid=790b7611b25f12e79fe8320ecbc63a7289a1dd3808bbc3b1&rid=giphy.gif"
+    )
+    .setColor("RED");
 
+  if (!leaveChannel) return;
+  leaveChannel.send(leaveEmbed);
+});
+
+
+//Irgendwas
 bot.on("message", message => {
    if (message.content.toLowerCase() === 'TMSf8ball') {
     let sEmbed = new Discord.RichEmbed()

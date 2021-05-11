@@ -9,6 +9,7 @@ dependencies:
   discord.js: 11.6.4
   discord.js-commando: github.com/discordjs/Commando/02be96bc92ac3c982a5acc4f7e81e71bfd587c95
   express: 4.17.1
+  fs: 0.0.2
   module-alias: 2.2.2
   moment: 2.29.1
   moment-duration-format: 2.3.2
@@ -616,6 +617,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /fs/0.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-4fJE7zkzwbKmS9R5kTYGDQ9ZFPg=
   /function-bind/1.1.1:
     dev: false
     resolution:
@@ -1888,6 +1893,7 @@ specifiers:
   discord.js: ^11.5.1
   discord.js-commando: 'git+https://github.com/discordjs/Commando.git'
   express: ^4.17.1
+  fs: ^0.0.2
   module-alias: ^2.2.2
   moment: ^2.24.0
   moment-duration-format: ^2.3.2

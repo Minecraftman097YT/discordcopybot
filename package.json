@@ -31,7 +31,8 @@
     "mongoose": "^5.9.24",
     "redis": "^3.0.2",
     "common-tags": "^1.8.0",
-    "quick.db": "^7.1.2"
+    "quick.db": "^7.1.2",
+    "fs": "^0.0.2"
   },
   "_moduleAliases": {
     "@root": ".",
