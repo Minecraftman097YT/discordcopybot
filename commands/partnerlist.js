@@ -32,7 +32,7 @@ exports.run = (bot, message, args) => {
   
     .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
   
-    .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
+    .addField("PleRex‘s CΩmmunity© \nInhaber: PleRexTV#5721", "Invite: [Klicke Hier](https://discord.gg/dtkbPQEVyx)\n**---------------**")
 
     .setColor("009EE0")
   
