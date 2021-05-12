@@ -32,6 +32,8 @@ exports.run = (bot, message, args) => {
   
     .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
   
+    .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
+
     .setColor("009EE0")
   
     .setFooter(`Wenn du Möchtest, Kannst du Gerne auch einen Unserem Partner Server Beitreten. Das Beitreten eines Partner Servers ist nicht Pflicht!`);
