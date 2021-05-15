@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 "Was spielen die Kinder im Kriegsgebieten? wer sucht der findet, wer trauf tritt verschwindet :D",
 "Bester Doktor Name: Dr F.otze",
 "Zombies essen gehirne aber mach dir keine sorgen, du bist in sicherheit :D",
-"Was Heist Fernsehverbot auf Russisch? Niedlix",
+"Was Heist Fernsehverbot auf Russisch? Netflix & Chill",
 "5 schritte zum Millonär. Der Rollstuff kann nicht laufen",
 "Ich habe dich als Hintergrund Bild, das hilft gegen meie HandySucht",
 "Warum haben Frauen nur 4 Gehirnzellen? Der Herd hat auch nur 4 Platten",
