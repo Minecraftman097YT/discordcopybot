@@ -54,13 +54,13 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: "Chats von Prime Empire",
-      type: "LISTENING",
+      name: "Wartungen!",
+      type: "PLAYING",
       url: "https://www.twitch.tv/minecraftman097"
     }
   }
   );
-  bot.user.setStatus("online");
+  bot.user.setStatus("dnd");
 });
 
 //Commands Ohne Prefix

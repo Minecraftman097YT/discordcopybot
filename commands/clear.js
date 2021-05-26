@@ -9,7 +9,7 @@ exports.run = (bot, message, args) => {
   message.channel.bulkDelete(args[0]).then(() => {
   let Embed = new Discord.RichEmbed()
   .setTitle(`${args[0]} Nachrichten gelöscht!`)
-  .setDescription(`Es wurden **${args[0]}** Nachrichten gelöscht :ballot_box_with_check:  `)
+  .setDescription(`Es wurden **${args[0]}** Nachrichten gelöscht :white_check_mark:`)
   .setTimestamp()
   .setColor("GREEN")
   message.channel.send(Embed)
