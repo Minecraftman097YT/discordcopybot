@@ -40,7 +40,7 @@ exports.run = (bot, message, args) => {
     
     .addField("Gaming Community \nInhaber: Nat©#2710", "Invite [Klicke Hier](https://discord.gg/GEN8tTsDz2)\n**---------------**")
   
-    .addField(" \nInhaber: ", "Invite [Klicke Hier](https://discord.gg/KtYCkWDx)\n**---------------**")
+    .addField("Friends4all \nInhaber: Cha0snc#2270", "Invite [Klicke Hier](https://discord.gg/KtYCkWDx)\n**---------------**")
 
     .setColor("009EE0")
   
