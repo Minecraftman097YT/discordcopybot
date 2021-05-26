@@ -25,11 +25,7 @@ exports.run = (bot, message, args) => {
     .addField("Kyoko Family \nInhaber: GAMIX#3566", "Invite: [Klicke Hier](https://discord.gg/zpUufPhCQJ)\n**---------------**")
   
     .addField("CrazyEmpire \nInhaber: Ko.rex-hi#4904", "Invite: [Klicke Hier](https://discord.gg/DSr8HbmPGT)\n**---------------**")
-  
-    .addField("Gamer Room \nInhaber: Lukas2007#2007", "Invite: [Klicke Hier](https://discord.gg/nTVeVm3DMH)\n**---------------**")
-  
-    .addField("» VibeCrew Community \nInhaber: ! Akiroᵛᶤᵇᵉ#0001", "Invite: [Klicke Hier](https://discord.gg/qgFjCHXd6d)\n**---------------**")
-  
+
     .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
   
     .addField("PleRex‘s CΩmmunity© \nInhaber: PleRexTV#5721", "Invite: [Klicke Hier](https://discord.gg/dtkbPQEVyx)\n**---------------**")
