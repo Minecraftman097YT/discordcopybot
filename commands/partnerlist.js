@@ -34,7 +34,13 @@ exports.run = (bot, message, args) => {
     
     .addField(":video_game: | GamersOnly \nInhaber: its Redz 🧃#0001", "Invite: [Klicke Hier](https://discord.gg/agGvFCw69E)\n**---------------**")
   
-    .addField("𝕊𝔼  | 𝕆𝕗𝕗𝕚𝕫𝕚𝕖𝕝𝕝𝕖𝕣 𝕊𝕖𝕣𝕧𝕖𝕣 \nInhaber: KingX#4389", "Invite [Klicke Hier]()\n**---------------**")
+    .addField("𝕊𝔼  | 𝕆𝕗𝕗𝕚𝕫𝕚𝕖𝕝𝕝𝕖𝕣 𝕊𝕖𝕣𝕧𝕖𝕣 \nInhaber: KingX#4389", "Invite [Klicke Hier](https://discord.gg/6V49xjjb2y)\n**---------------**")
+  
+    .addField(":gem: • berkan.png \nInhaber: berkan#0001", "Invite [Klicke Hier](https://discord.gg/SNfaYdbA)\n**---------------**")
+    
+    .addField("Gaming Community \nInhaber: Nat©#2710", "Invite [Klicke Hier](https://discord.gg/GEN8tTsDz2)\n**---------------**")
+  
+    .addField(" \nInhaber: ", "Invite [Klicke Hier](https://discord.gg/KtYCkWDx)\n**---------------**")
 
     .setColor("009EE0")
   
