@@ -29,6 +29,10 @@ exports.run = (bot, message, args) => {
     .addField("Breadcord \nInhaber: MrBrotstange シ#1234", "Invite: [Klicke Hier](https://discord.gg/C7s4ugaQfw)\n**---------------**")
   
     .addField("PleRex‘s CΩmmunity© \nInhaber: PleRexTV#5721", "Invite: [Klicke Hier](https://discord.gg/dtkbPQEVyx)\n**---------------**")
+  
+    .addField("Weebland \nInhaber: Youtub#8259", "Invite: [Klick Hier](https://discord.gg/b9jNVyQd)\n**---------------**")
+    
+    .addField(":video_game: | GamersOnly \nInhaber: its Redz 🧃#0001", "Invite: [Klicke Hier](https://discord.gg/agGvFCw69E)\n**---------------**")
 
     .setColor("009EE0")
   
