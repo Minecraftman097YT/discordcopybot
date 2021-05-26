@@ -33,6 +33,8 @@ exports.run = (bot, message, args) => {
     .addField("Weebland \nInhaber: Youtub#8259", "Invite: [Klick Hier](https://discord.gg/b9jNVyQd)\n**---------------**")
     
     .addField(":video_game: | GamersOnly \nInhaber: its Redz 🧃#0001", "Invite: [Klicke Hier](https://discord.gg/agGvFCw69E)\n**---------------**")
+  
+    .addField("𝕊𝔼  | 𝕆𝕗𝕗𝕚𝕫𝕚𝕖𝕝𝕝𝕖𝕣 𝕊𝕖𝕣𝕧𝕖𝕣 \nInhaber: KingX#4389", "Invite [Klicke Hier]()\n**---------------**")
 
     .setColor("009EE0")
   
