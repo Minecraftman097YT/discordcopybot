@@ -54,7 +54,7 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: "Wartungen!",
+      name: "Wartungen! '_partner' Bald Wieder Benutzbar!",
       type: "PLAYING",
       url: "https://www.twitch.tv/minecraftman097"
     }
@@ -87,6 +87,10 @@ bot.on('message', message => {
     message.channel.send('>>> **Was? Findest du es Etwa Lustig? Komisch...**');
   }
 });
+
+bot.on('message', message => {
+  if (message.content === '')
+})
 
 bot.on('message', message => {
   if (message.content === 'welcome') {
