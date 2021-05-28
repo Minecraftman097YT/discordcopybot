@@ -66,30 +66,32 @@ bot.on("ready", () => {
 //Commands Ohne Prefix
 bot.on('message', message => {
   if (message.content === 'Hallo') {
-    message.channel.send('>>> **Hallo. Wie Geht es dir?**');
+    message.channel.send('Hallo. Wie Geht es dir?');
   }
 });
 
 bot.on('message', message => {
   if (message.content === 'Gut') {
-    message.channel.send('>>> **Freut mich.**');
+    message.channel.send('Freut mich');
   }
 });
 
 bot.on('message', message => {
   if (message.content === 'Schlecht') {
-    message.channel.send('>>> **Ok. Ich Hoffe, Dir geht es bald Besser.**');
+    message.channel.send('Ok. Ich Hoffe, Dir geht es bald Besser.');
   }
 });
 
 bot.on('message', message => {
   if (message.content === 'lol') {
-    message.channel.send('>>> **Was? Findest du es Etwa Lustig? Komisch...**');
+    message.channel.send('Was? Findest du es Etwa Lustig? Komisch...');
   }
 });
 
 bot.on('message', message => {
-  if (message.content === '')
+  if (message.content === 'Nice') {
+    message.channel.send('Cool! Freut mich!')
+  }
 })
 
 bot.on('message', message => {
