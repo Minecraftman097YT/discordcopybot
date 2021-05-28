@@ -103,7 +103,29 @@ bot.on('message', message => {
 
 //Welcome-Bye
 
+//Welcome & goodbye messages\\
+bot.on('guildMemberAdd', member => {
+    member.roles.add(member.guild.roles.cache.find(i => i.name === ''))
 
+    const welcomeEmbed = new Discord.MessageEmbed()
+
+    welcomeEmbed.setColor('#5cf000')
+    welcomeEmbed.setTitle('*Willkommen!*' + member.user.username + '** Du bist nun Mitglied Nummer: **' + member.guild.memberCount + '**')
+    welcomeEmbed.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp')
+
+    member.guild.channels.cache.find(i => i.name === 'hauptchat').send(welcomeEmbed)
+})
+
+bot.on('guildMemberRemove', member => {
+    const goodbyeEmbed = new Discord.MessageEmbed()
+
+    goodbyeEmbed.setColor('#f00000')
+    goodbyeEmbed.setTitle('**' + member.user.username + '** Hat uns Verlassen! \n Wis**' + member.guild.memberCount + '** left Among Us')
+    goodbyeEmbed.setImage('https://gamewith-en.akamaized.net/article/thumbnail/rectangle/22183.png')
+
+    member.guild.channels.cache.find(i => i.name === 'greetings').send(goodbyeEmbed)
+})
+//Welcome & goodbye messages end\\
 
 //Irgendwas
 bot.on("message", message => {
