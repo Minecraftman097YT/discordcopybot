@@ -120,10 +120,10 @@ bot.on('guildMemberRemove', member => {
     const goodbyeEmbed = new Discord.MessageEmbed()
 
     goodbyeEmbed.setColor('#f00000')
-    goodbyeEmbed.setTitle('**' + member.user.username + '** Hat uns Verlassen! \n Wis**' + member.guild.memberCount + '** left Among Us')
+    goodbyeEmbed.setTitle('**' + member.user.username + '** Hat uns Verlassen! \n Wir Sind nurnoch**' + member.guild.memberCount + '** Mitglieder **')
     goodbyeEmbed.setImage('https://gamewith-en.akamaized.net/article/thumbnail/rectangle/22183.png')
 
-    member.guild.channels.cache.find(i => i.name === 'greetings').send(goodbyeEmbed)
+    member.guild.channels.cache.find(i => i.name === 'hauptchat').send(goodbyeEmbed)
 })
 //Welcome & goodbye messages end\\
 
