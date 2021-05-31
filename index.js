@@ -100,6 +100,12 @@ bot.on('message', message => {
   }
 });
 
+bot.on('message', message => {
+  if (message.content === 'wilkommen') {
+    message.channel.send('╔══════ ≪≫°✺°≪ ≫ ══════╗\n♥♡♥♡♥**Willkommen**♥♡♥♡♥\n╚══════ ≪≫°✺°≪ ≫ ══════╝');
+  }
+});
+
 
 //Welcome-Bye
 
