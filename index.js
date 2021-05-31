@@ -11,6 +11,24 @@ const config = require("./storage/config.json");
 const TOKEN = process.env.TOKEN;
 const fetch = require('node-fetch')
 const fs = require("fs");
+const db = require("quick.db") //using quick.db package
+
+bot.on("guildMemberAdd", (member) => { //usage of welcome event
+  let chx = db.get(`welchannel_${member.guild.id}`); //defining var
+  
+  if(chx === null) { //check if var have value or not
+    return;
+  }
+
+  let wembed = new Discord.RichEmbed() //define embed
+  .setAuthor(member.user.username, member.user.avatarURL())
+  .setColor("#ff2050")
+  .setThumbnail(member.user.avatarURL())
+  .setDescription(`We are very happy to have you in our server`);
+  
+  bot.channels.cache.get(chx).send(wembed) //get channel and send embed
+})
+
 
 const prefix = config.prefix;
 
