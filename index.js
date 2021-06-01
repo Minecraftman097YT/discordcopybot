@@ -72,13 +72,13 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: "Wartungen! '_partner' Bald Wieder Benutzbar!",
-      type: "STREAMING",
+      name: "Bin wieder Online :D",
+      type: "PLAYING",
       url: "https://youtu.be/watch/dQw4w9WgXcQ"
     }
   }
   );
-  bot.user.setStatus("dnd");
+  bot.user.setStatus("online");
 });
 
 //Commands Ohne Prefix
