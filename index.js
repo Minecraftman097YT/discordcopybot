@@ -73,8 +73,8 @@ bot.on("ready", () => {
   bot.user.setPresence({
     game: {
       name: "Wartungen! '_partner' Bald Wieder Benutzbar!",
-      type: "PLAYING",
-      url: "https://www.twitch.tv/minecraftman097"
+      type: "STREAMING",
+      url: "https://youtu.be/watch/dQw4w9WgXcQ"
     }
   }
   );
