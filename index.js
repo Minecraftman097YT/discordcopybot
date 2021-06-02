@@ -113,6 +113,12 @@ bot.on('message', message => {
 })
 
 bot.on('message', message => {
+  if (message.content === 'Elmar') {
+    message.channel.send('<@793165733185978448>')
+  }
+})
+
+bot.on('message', message => {
   if (message.content === 'welcome') {
     message.channel.send('<a:info:827806069404205076> **Willkommen Neuling!** <a:info:827806069404205076>\n<a:info:827806069404205076> **Schau mal in <#810900110053081121> Vorbei!** <a:info:827806069404205076>');
   }
