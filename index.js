@@ -130,6 +130,86 @@ bot.on('message', message => {
   }
 });
 
+bot.on('message', message => {
+  if (message.content === 'A') {
+    message.reply('B')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'C') {
+    message.reply('D')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'E') {
+    message.reply('F')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'G') {
+    message.reply('H')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'I') {
+    message.reply('J')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'K') {
+    message.reply('L')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'M') {
+    message.reply('N')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'O') {
+    message.reply('P')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'Q') {
+    message.reply('R')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'S') {
+    message.reply('T')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'U') {
+    message.reply('V')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'W') {
+    message.reply('X')
+  }
+})
+
+bot.on('message', message => {
+  if (message.content === 'Y') {
+    message.reply('Z')
+  }
+})
+
+
+
 
 //Welcome-Bye
 
