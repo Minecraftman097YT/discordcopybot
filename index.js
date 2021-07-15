@@ -72,7 +72,7 @@ bot.on("ready", () => {
   console.log(`${bot.user.tag} ist nie Offline!`);
   bot.user.setPresence({
     game: {
-      name: "Bin wieder Online :D",
+      name: "Lebe ich? bin ich Real? man weiß es nicht ;).",
       type: "PLAYING",
       url: "https://youtu.be/watch/dQw4w9WgXcQ"
     }
