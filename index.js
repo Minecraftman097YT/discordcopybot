@@ -68,17 +68,28 @@ function doMagic8BallVoodoo() {
   return rand[Math.floor(Math.random() * rand.length)];
 }
 
-bot.on("ready", () => {
-  console.log(`${bot.user.tag} ist nie Offline!`);
-  bot.user.setPresence({
-    game: {
-      name: "Lebe ich? bin ich Real? man weiß es nicht ;).",
-      type: "PLAYING",
-      url: "https://youtu.be/watch/dQw4w9WgXcQ"
-    }
+bot.on("ready", async () => {
+  console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
+  function changing_status() {
+    let status = [
+      "Willkommen auf Prime Empire",
+      "_help | Discord",
+      "_help | Community",
+      "_help | Prime Empire",
+      "_help | v.12.2.7",
+      `op!help | ${bot.guilds.size}` +
+        " Server und " +
+        ` ${bot.users.size} ` +
+        " Member"
+    ];
+    let randomStatus = status[Math.floor(Math.random() * status.length)];
+    bot.user.setActivity(randomStatus, { type: "PLAYING" });
+                                               //"LISTENING"
+                                              //"STREAMING"
+                                            //"PLAYING"
+    bot.user.setStatus("online");
   }
-  );
-  bot.user.setStatus("online");
+  setInterval(changing_status, 5000);
 });
 
 //Commands Ohne Prefix
