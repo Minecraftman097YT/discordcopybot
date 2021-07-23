@@ -76,11 +76,7 @@ bot.on("ready", async () => {
       "_help | Discord",
       "_help | Community",
       "_help | Prime Empire",
-      "_help | v.12.2.7",
-      `op!help | ${bot.guilds.size}` +
-        " Server und " +
-        ` ${bot.users.size} ` +
-        " Member"
+      "_help | v.12.2.7"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "PLAYING" });
