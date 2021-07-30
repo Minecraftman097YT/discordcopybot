@@ -4,7 +4,7 @@ exports.run = (bot, message, args) => {
   
   
   const Help = new Discord.RichEmbed()
-    .setTitle("**Prime Empire Bot Commands:**", "------------------------")
+    .setTitle("**PixelBlock.EU Bot Commands:**", "------------------------")
     .addField("**_partner**", "Benutzung: **_partner**\n**In Wartungen**")
     .addField("**_meme**", "Benutzung: **_meme**")
     .addField("**_ping**", "Benutzung: **_ping**")

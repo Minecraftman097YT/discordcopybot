@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = (bot, message, args) => {
   const Help = new Discord.RichEmbed()
     .setTitle("**__Bot Info__**")
-    .addField("👑BotName👑:", "``Prime Empire Bot``")
+    .addField("👑BotName👑:", "``PixelBlock.EU``")
     .addField("👨‍💼BotOwner👨‍💼:","<@810648022240591893>")
     .addField("🤖Botversion🤖:", "`12.0.0`")
     .addField("👽BotSprache👽:", "`Javascript`")

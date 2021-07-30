@@ -11,7 +11,7 @@ exports.run = (bot, message, args) => {
   if (!msg) return message.reply(".")
 
   let embed = new Discord.RichEmbed()
-  .setTitle("Prime Empire Bot Update")
+  .setTitle("PixelBlock.EU Bot Update")
   .setDescription(`${msg}`)
   .setColor("BLUE")
   .setTimestamp()

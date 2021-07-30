@@ -72,7 +72,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
   function changing_status() {
     let status = [
-      "Willkommen auf Prime Empire",
+      "Willkommen auf PixelBlock.EU",
       "_help | Discord",
       "_help | Community",
       "_help | Prime Empire",
