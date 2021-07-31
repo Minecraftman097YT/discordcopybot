@@ -73,10 +73,10 @@ bot.on("ready", async () => {
   function changing_status() {
     let status = [
       "Willkommen auf PixelBlock.EU",
-      "_help | Discord",
-      "_help | Community",
-      "_help | Prime Empire",
-      "_help | v.12.2.7"
+      "!help | Discord",
+      "!help | Community",
+      "!help | Prime Empire",
+      "!help | v.12.2.7"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "PLAYING" });
