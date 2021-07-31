@@ -13,7 +13,6 @@ exports.run = (bot, message, args) => {
   let embed = new Discord.RichEmbed()
   .setTitle("PixelBlock.EU Umfrage!")
   .addField(`Frage:`, `${msg}`)
-  .addField(`Ping:`, `<@&811249171977732127>`)
   .setColor("BLUE")
   .setFooter(`Umfrage von: ${message.author.tag}`)
   .setThumbnail("https://cdn.discordapp.com/attachments/814438593849851936/832556628841988107/image0.jpg")

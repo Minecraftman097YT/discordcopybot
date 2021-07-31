@@ -11,15 +11,9 @@ exports.run = (bot, message, args) => {
   if (!msg) return message.reply(".")
 
   let embed = new Discord.RichEmbed()
-  .setTitle("PixelBlock.EU Bot Update")
+  .setTitle("PixelBlock.EU Update")
   .setDescription(`${msg}`)
   .setColor("BLUE")
   .setTimestamp()
   message.delete()
-  message.channel.send(embed).then(sentEmbed => {
-    sentEmbed.react("🇳")
-    sentEmbed.react("🇮")
-    sentEmbed.react("🇨")
-    sentEmbed.react("🇪")
-    })
 };
