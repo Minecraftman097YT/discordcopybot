@@ -2,18 +2,20 @@ const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
   const admin = ["810648022240591893"];
+  
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Du hast keine Berechtigungen :x:")
 
   let embed0 = new Discord.RichEmbed()
-    .setTitle(":x: You are not the Bot Owner!! :x:")
-    .setDescription("You Cant use this Command!")
+    .setTitle(":x:")
+    .setDescription("Da du kein Admin bist, kannst du diesen Befehl nicht Verwenden.")
     .setTimestamp()
     .setColor("#8b0000");
   if (!admin.some(admin => message.author.id === admin))
     return message.channel.send(embed0).then(message.react("❌"));
 
   const restart = new Discord.RichEmbed()
-    .setTitle("RESTART")
-    .setDescription("The Bot will now Restarting")
+    .setTitle(":white_check_mark:")
+    .setDescription("Der Bot wird nun Neugestartet.")
     .setFooter(message.author.tag)
     .setColor("#8b0000");
   message.channel.send(restart).then(() => {
