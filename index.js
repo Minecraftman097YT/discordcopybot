@@ -96,6 +96,13 @@ bot.on('message', message => {
 });
 
 bot.on('message', message => {
+  if (message.content === 'hallo') {
+    message.channel.send('Hallo. Wie Geht es dir?');
+  }
+});
+
+
+bot.on('message', message => {
   if (message.content === 'Gut') {
     message.channel.send('Freut mich');
   }
