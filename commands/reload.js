@@ -16,7 +16,7 @@ if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Du hast
 
   const restart = new Discord.RichEmbed()
     .setTitle(":white_check_mark:")
-    .setDescription("Der Bot wird nun Neugestartet.")
+    .setDescription("Der Bot wird nun neugestartet.")
     .setFooter(message.author.tag)
     .setColor("#8b0000");
   message.channel.send(restart).then(() => {
