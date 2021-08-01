@@ -7,9 +7,9 @@ exports.run = (bot, message, args) => {
     .setTitle("**PixelBlock.EU Bot Commands:**", "------------------------")
     .setDescription("**Alle Commands wurden in Kategorien aufgeteilt.**")
     .addField("**Admin Commands**", "**/clear <1-100>** - Lösche Beliebig nachrichten aus dem Chat.\n**/joinvc <name>** - Lass den Bot in einen Sprachkanal gehen.\n**/poll** - Mach Umfragen mit dem Bot.\n**/reload** - Starte den bot neu.")
-    .addField("**User Commands**", "**/help** - Lass dir diese Nachricht anschauen.\n**/ping** - Sehe den Bot-Ping.\n**/team** Sehe die Teamliste.\n**/witz** - Der Bot Erzählt dir ein Witz.\n**/8ball <frage>** - Frage dem Bot eine Frage, und der Bot Antwortet mit was Vollkommend Unerwartetem.\n**/ddos** - Lasse dein eigenes Internet angreifen.\n**/botinfo** - Sehe eine Kleine Info über dem Bot.\n**/shop** - Bekomme einen Link, der zu unserem Shop führt.\n**/join** - Sehe die Server Adresse und die Version.")
+    .addField("**User Commands**", "**/help** - Lass dir diese Nachricht anschauen.\n**/ping** - Sehe den Bot-Ping.\n**/team** Sehe die Teamliste.\n**/witz** - Der Bot Erzählt dir ein Witz.\n**/8ball <frage>** - Frage dem Bot eine Frage, und der Bot Antwortet mit was Vollkommend Unerwartetem.\n**/ddos** - Lasse dein eigenes Internet angreifen.\n**/botinfo** - Sehe eine Kleine Info über dem Bot.\n**/shop** - Bekomme einen Link, der zu unserem Shop führt.\n**/server-adresse** - Sehe die Server Adresse und die Version.")
     .setColor("FF8000")
-    .setFooter(`Angefragt von: ${message.author.tag}`);
+    .setFooter(`Angefragt von: ${message.author.tag}. INFO: Die Befehle kann man GROß und in KLEIN schreiben.`);
   message.channel.send(Help);
   message.delete();
 };
