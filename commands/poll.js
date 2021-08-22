@@ -11,7 +11,7 @@ exports.run = (bot, message, args) => {
   if (!msg) return message.reply(".")
 
   let embed = new Discord.RichEmbed()
-  .setTitle("PixelBlock.EU Umfrage!")
+  .setTitle("Prime Empire Umfrage!")
   .addField(`Frage:`, `${msg}`)
   .setColor("BLUE")
   .setFooter(`Umfrage von: ${message.author.tag}`)

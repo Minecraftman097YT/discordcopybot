@@ -40,11 +40,11 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username}, is online and is in ${bot.guilds.size}`);
   function changing_status() {
     let status = [
-      "Willkommen auf PixelBlock.EU",
-      "/help | Discord",
-      "/help | Community",
-      "/help | PixelBlock.EU",
-      "/help | v.12.2.7"
+      "Willkommen auf Prime Empire",
+      "_help | Discord",
+      "_help | Community",
+      "_help | PixelBlock.EU",
+      "_help | v.12.2.7"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
     bot.user.setActivity(randomStatus, { type: "PLAYING" });

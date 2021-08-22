@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
-  const admin = ["810648022240591893", "659914958120812546", "749575214240759809"];
-                 //Minecraftman097      //GameToo            //cinimini
+  const admin = ["810648022240591893"];
+                 //Minecraftman097   
   
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Du hast keine Berechtigungen :x:")
 
