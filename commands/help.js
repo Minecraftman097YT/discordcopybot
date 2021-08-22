@@ -6,8 +6,8 @@ exports.run = (bot, message, args) => {
   const Help = new Discord.RichEmbed()
     .setTitle("**PixelBlock.EU Bot Commands:**", "------------------------")
     .setDescription("**Alle Commands wurden in Kategorien aufgeteilt.**")
-    .addField("**Admin Commands**", "**/clear <1-100>** - Lösche Beliebig nachrichten aus dem Chat.\n**/joinvc <name>** - Lass den Bot in einen Sprachkanal gehen.\n**/poll** - Mach Umfragen mit dem Bot.\n**/reload** - Starte den bot neu.")
-    .addField("**User Commands**", "**/help** - Lass dir diese Nachricht anschauen.\n**/ping** - Sehe den Bot-Ping.\n**/witz** - Der Bot Erzählt dir ein Witz.\n**/8ball <frage>** - Frage dem Bot eine Frage, und der Bot Antwortet mit was Vollkommend Unerwartetem.\n**/ddos** - Lasse dein eigenes Internet angreifen.\n**/botinfo** - Sehe eine Kleine Info über dem Bot.")
+    .addField("**Admin Commands**", "**_clear <1-100>** - Lösche Beliebig nachrichten aus dem Chat.\n**_joinvc <name>** - Lass den Bot in einen Sprachkanal gehen.\n**_poll** - Mach Umfragen mit dem Bot.\n**_reload** - Starte den bot neu.")
+    .addField("**User Commands**", "**_help** - Lass dir diese Nachricht anschauen.\n**_ping** - Sehe den Bot-Ping.\n**_witz** - Der Bot Erzählt dir ein Witz.\n**_8ball <frage>** - Frage dem Bot eine Frage, und der Bot Antwortet mit was Vollkommend Unerwartetem.\n**_ddos** - Lasse dein eigenes Internet angreifen.\n**_botinfo** - Sehe eine Kleine Info über dem Bot.")
     .setColor("FF8000")
     .setFooter(`Angefragt von: ${message.author.tag}. INFO: Die Befehle kann man GROß und in KLEIN schreiben.`);
   message.channel.send(Help);
