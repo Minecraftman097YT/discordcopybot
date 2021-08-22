@@ -43,7 +43,7 @@ bot.on("ready", async () => {
       "Willkommen auf Prime Empire",
       "_help | Discord",
       "_help | Community",
-      "_help | PixelBlock.EU",
+      "_help | Prime Empire",
       "_help | v.12.2.7"
     ];
     let randomStatus = status[Math.floor(Math.random() * status.length)];
